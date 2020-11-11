@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GameXepHinh.Properties
+namespace Game_Xếp_Hình.Properties
 {
 
 
