@@ -16,5 +16,98 @@ namespace Game_Xếp_Hình
         {
             InitializeComponent();
         }
+
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
+            this.Hide();
+        }
+
+
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            //label1.Parent = pictureBox2;
+            //label1.BackColor = Color.Transparent;
+            //label2.Parent = pictureBox2;
+            //label2.BackColor = Color.Transparent;
+            TransparetBackground(label2);
+            TransparetBackground(label1);
+        }
+
+        private void label1_MouseMove(object sender, MouseEventArgs e)
+        {
+            label1.ForeColor = Color.Red;
+        }
+
+        private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.DimGray;
+        }
+        void TransparetBackground(Control C)
+        {
+            C.Visible = false;
+
+            C.Refresh();
+            Application.DoEvents();
+
+            Rectangle screenRectangle = RectangleToScreen(this.ClientRectangle);
+            int titleHeight = screenRectangle.Top - this.Top;
+            int Right = screenRectangle.Left - this.Left;
+
+            Bitmap bmp = new Bitmap(this.Width, this.Height);
+            this.DrawToBitmap(bmp, new Rectangle(0, 0, this.Width, this.Height));
+            Bitmap bmpImage = new Bitmap(bmp);
+            bmp = bmpImage.Clone(new Rectangle(C.Location.X + Right, C.Location.Y + titleHeight, C.Width, C.Height), bmpImage.PixelFormat);
+            C.BackgroundImage = bmp;
+
+            C.Visible = true;
+        }
+        private void label2_Click(object sender, EventArgs e)
+        {
+            //Quit q = new Quit();
+            //q.Show();
+            Form bg = new Form();
+            try
+            {
+                using (Quit q = new Quit())
+                {
+                    bg.StartPosition = FormStartPosition.Manual;
+                    bg.FormBorderStyle = FormBorderStyle.None;
+                    bg.Opacity = .50d;
+                    bg.BackColor = Color.Black;
+                    bg.WindowState = FormWindowState.Maximized;
+                    bg.TopMost = true;
+                    bg.Location = this.Location;
+                    bg.ShowInTaskbar = false;
+                    bg.Show();
+                    q.Owner = bg;
+                    q.ShowDialog();
+                    bg.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                bg.Dispose();
+            }
+            
+        }
+
+        private void label2_MouseMove(object sender, MouseEventArgs e)
+        {
+            label2.ForeColor = Color.Red;
+        }
+
+        private void label2_MouseLeave(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.DimGray;
+        }
     }
 }
