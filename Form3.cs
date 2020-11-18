@@ -159,44 +159,7 @@ namespace Game_Xếp_Hình
             y = 2;
             showpb();
         }
-        private void btn_TamDung_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (TT_game == true)
-            {
-                if (e.KeyCode == Keys.Left)
-                {
-                    //Di chuyển sang phải
-                    go_right();
-                }
-                else if (e.KeyCode == Keys.Right)
-                {
-                    //sang trái
-                    go_left();
-                }
-                else if (e.KeyCode == Keys.Up)
-                {
-                    //xuống dưới
-                    go_bottom();
-                }
-                else if (e.KeyCode == Keys.Down)
-                {
-                    //lên trên
-                    go_top();
-                }
-                if (CheckWin() == true)
-                {
-                    MessageBox.Show("You Win", "", MessageBoxButtons.OK);
-                    //timer1.Stop();
-                    init();
-                    setmap();
-                    //ở đât có thể cho level ++
-                    // tăng độ khó
-
-                }
-                //lb_Score.Text = diem.ToString();
-            }
-
-        }
+        
 
         private void bPause_KeyUp(object sender, KeyEventArgs e)
         {
