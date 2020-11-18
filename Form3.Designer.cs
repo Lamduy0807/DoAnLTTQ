@@ -103,7 +103,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(509, 56);
+            this.label4.Location = new System.Drawing.Point(693, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 32);
             this.label4.TabIndex = 17;
@@ -114,7 +114,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(518, 9);
+            this.label1.Location = new System.Drawing.Point(693, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 32);
             this.label1.TabIndex = 16;
@@ -125,7 +125,7 @@
             // 
             this.lvcapdo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvcapdo.ForeColor = System.Drawing.Color.Black;
-            this.lvcapdo.Location = new System.Drawing.Point(846, 9);
+            this.lvcapdo.Location = new System.Drawing.Point(1047, 19);
             this.lvcapdo.Name = "lvcapdo";
             this.lvcapdo.Size = new System.Drawing.Size(80, 32);
             this.lvcapdo.TabIndex = 15;
@@ -136,7 +136,7 @@
             // 
             this.lbtime.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtime.ForeColor = System.Drawing.Color.Black;
-            this.lbtime.Location = new System.Drawing.Point(628, 56);
+            this.lbtime.Location = new System.Drawing.Point(812, 66);
             this.lbtime.Name = "lbtime";
             this.lbtime.Size = new System.Drawing.Size(89, 32);
             this.lbtime.TabIndex = 14;
@@ -147,7 +147,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(739, 9);
+            this.label2.Location = new System.Drawing.Point(923, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 32);
             this.label2.TabIndex = 13;
@@ -158,7 +158,7 @@
             // 
             this.lbdiem.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbdiem.ForeColor = System.Drawing.Color.Black;
-            this.lbdiem.Location = new System.Drawing.Point(593, 9);
+            this.lbdiem.Location = new System.Drawing.Point(777, 19);
             this.lbdiem.Name = "lbdiem";
             this.lbdiem.Size = new System.Drawing.Size(89, 32);
             this.lbdiem.TabIndex = 18;
@@ -169,7 +169,7 @@
             // 
             this.pbmain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbmain.Image = ((System.Drawing.Image)(resources.GetObject("pbmain.Image")));
-            this.pbmain.Location = new System.Drawing.Point(592, 181);
+            this.pbmain.Location = new System.Drawing.Point(657, 140);
             this.pbmain.Name = "pbmain";
             this.pbmain.Size = new System.Drawing.Size(507, 391);
             this.pbmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -179,7 +179,7 @@
             // pb9
             // 
             this.pb9.InitialImage = null;
-            this.pb9.Location = new System.Drawing.Point(318, 271);
+            this.pb9.Location = new System.Drawing.Point(339, 281);
             this.pb9.Name = "pb9";
             this.pb9.Size = new System.Drawing.Size(125, 125);
             this.pb9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -189,7 +189,7 @@
             // pb6
             // 
             this.pb6.InitialImage = null;
-            this.pb6.Location = new System.Drawing.Point(318, 140);
+            this.pb6.Location = new System.Drawing.Point(339, 150);
             this.pb6.Name = "pb6";
             this.pb6.Size = new System.Drawing.Size(125, 125);
             this.pb6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -199,7 +199,7 @@
             // pb3
             // 
             this.pb3.InitialImage = null;
-            this.pb3.Location = new System.Drawing.Point(318, 9);
+            this.pb3.Location = new System.Drawing.Point(339, 19);
             this.pb3.Name = "pb3";
             this.pb3.Size = new System.Drawing.Size(125, 125);
             this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -209,7 +209,7 @@
             // pb8
             // 
             this.pb8.InitialImage = null;
-            this.pb8.Location = new System.Drawing.Point(187, 271);
+            this.pb8.Location = new System.Drawing.Point(208, 281);
             this.pb8.Name = "pb8";
             this.pb8.Size = new System.Drawing.Size(125, 125);
             this.pb8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -219,7 +219,7 @@
             // pb7
             // 
             this.pb7.InitialImage = null;
-            this.pb7.Location = new System.Drawing.Point(56, 271);
+            this.pb7.Location = new System.Drawing.Point(77, 281);
             this.pb7.Name = "pb7";
             this.pb7.Size = new System.Drawing.Size(125, 125);
             this.pb7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -229,7 +229,7 @@
             // pb5
             // 
             this.pb5.InitialImage = null;
-            this.pb5.Location = new System.Drawing.Point(187, 140);
+            this.pb5.Location = new System.Drawing.Point(208, 150);
             this.pb5.Name = "pb5";
             this.pb5.Size = new System.Drawing.Size(125, 125);
             this.pb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -239,7 +239,7 @@
             // pb4
             // 
             this.pb4.InitialImage = null;
-            this.pb4.Location = new System.Drawing.Point(56, 140);
+            this.pb4.Location = new System.Drawing.Point(77, 150);
             this.pb4.Name = "pb4";
             this.pb4.Size = new System.Drawing.Size(125, 125);
             this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -249,7 +249,7 @@
             // pb2
             // 
             this.pb2.InitialImage = null;
-            this.pb2.Location = new System.Drawing.Point(187, 9);
+            this.pb2.Location = new System.Drawing.Point(208, 19);
             this.pb2.Name = "pb2";
             this.pb2.Size = new System.Drawing.Size(125, 125);
             this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -259,7 +259,7 @@
             // pb1
             // 
             this.pb1.InitialImage = null;
-            this.pb1.Location = new System.Drawing.Point(56, 9);
+            this.pb1.Location = new System.Drawing.Point(77, 19);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(125, 125);
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
