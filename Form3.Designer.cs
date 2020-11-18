@@ -72,6 +72,7 @@
             this.bExit.TabIndex = 21;
             this.bExit.Text = "Exit";
             this.bExit.UseVisualStyleBackColor = false;
+            this.bExit.Click += new System.EventHandler(this.bExit_Click);
             // 
             // bNew
             // 
@@ -83,6 +84,7 @@
             this.bNew.TabIndex = 20;
             this.bNew.Text = "Game Mới";
             this.bNew.UseVisualStyleBackColor = false;
+            this.bNew.Click += new System.EventHandler(this.bNew_Click);
             // 
             // bPause
             // 
@@ -94,6 +96,8 @@
             this.bPause.TabIndex = 19;
             this.bPause.Text = "Tạm Dừng";
             this.bPause.UseVisualStyleBackColor = false;
+            this.bPause.Click += new System.EventHandler(this.bPause_Click);
+            this.bPause.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bPause_KeyUp);
             // 
             // label4
             // 
@@ -264,6 +268,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::Game_Xếp_Hình.Properties.Resources.main;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
