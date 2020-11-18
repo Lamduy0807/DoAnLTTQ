@@ -23,8 +23,9 @@ namespace Game_Xếp_Hình
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            if (panel2.Width >= 850)
+            if (panel2.Width >= panel1.Width/2)
             {
+                pictureBox2.Visible = true;
                 panel2.Width += rand.Next(5,10);
             }
             else
