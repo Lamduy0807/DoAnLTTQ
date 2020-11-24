@@ -17,7 +17,7 @@ namespace Game_Xếp_Hình
         private bool TT_game = true;
         private int time;
         private int diem;
-        private int level;
+        private string level;
         public Form3()
         {
             InitializeComponent();
@@ -34,12 +34,12 @@ namespace Game_Xếp_Hình
         {
             x = 2;
             y = 2;
-            level = 1;
+            level = "dễ";
             diem = 0;
             time = 0;
             initarr();
             pbmain.Image = Game_Xếp_Hình.Properties.Resources.main;
-           // timer1.Start();
+            timer1.Start();
         }
         private int getvt(int x, int y)
         {
@@ -74,6 +74,9 @@ namespace Game_Xếp_Hình
             init();
             // showpb();
             setmap();
+            diem = 100;
+            lbcapdo.Text = level;
+            
         }
 
         private void showpb()
@@ -86,6 +89,7 @@ namespace Game_Xếp_Hình
             getanh(pb6, arr[5]);
             getanh(pb7, arr[6]);
             getanh(pb8, arr[7]);
+            getanh(pb9, arr[8]);
         }
         private void go_left()
         {
@@ -95,7 +99,7 @@ namespace Game_Xếp_Hình
                 arr[getvt(x, y)] = arr[getvt(x - 1, y)];
                 arr[getvt(x - 1, y)] = temp;
                 x--;
-                diem++;
+                diem--;
                 showpb();
             }
         }
@@ -107,7 +111,7 @@ namespace Game_Xếp_Hình
                 arr[getvt(x, y)] = arr[getvt(x + 1, y)];
                 arr[getvt(x + 1, y)] = temp;
                 x++;
-                diem++;
+                diem--;
                 showpb();
             }
         }
@@ -119,7 +123,7 @@ namespace Game_Xếp_Hình
                 arr[getvt(x, y)] = arr[getvt(x, y - 1)];
                 arr[getvt(x, y - 1)] = temp;
                 y--;
-                diem++;
+                diem--;
                 showpb();
             }
         }
@@ -132,7 +136,7 @@ namespace Game_Xếp_Hình
                 arr[getvt(x, y)] = arr[getvt(x, y + 1)];
                 arr[getvt(x, y + 1)] = temp;
                 y++;
-                diem++;
+                diem--;
                 showpb();
             }
         }
@@ -188,31 +192,21 @@ namespace Game_Xếp_Hình
                 if (CheckWin() == true)
                 {
                     MessageBox.Show("You Win", "", MessageBoxButtons.OK);
-                    //timer1.Stop();
+                    timer1.Stop();
                     init();
                     setmap();
+                    diem = 100;
                     //ở đât có thể cho level ++
                     // tăng độ khó
 
                 }
-               // lb_Score.Text = diem.ToString();
+                lbdiem.Text = diem.ToString();
             }
         }
 
-        private void bExit_Click(object sender, EventArgs e)
-        {
-            DialogResult r = MessageBox.Show("Bạn có muốn thoát game không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (r == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
+        
 
-        private void bNew_Click(object sender, EventArgs e)
-        {
-            init();
-            setmap();
-        }
+        
 
         private void bPause_Click(object sender, EventArgs e)
         {
@@ -220,14 +214,39 @@ namespace Game_Xếp_Hình
             {
                 TT_game = false;
                 bPause.Text = "Chơi Tiếp";
-                //timer1.Stop();
+                timer1.Stop();
             }
             else
             {
                 TT_game = true;
                 bPause.Text = "Tạm Dừng";
-               // timer1.Start();
+                timer1.Start();
             }
+        }
+
+        private void lbNew_Click_1(object sender, EventArgs e)
+        {
+            init();
+            setmap();
+            diem = 100;
+            lbdiem.Text = diem.ToString();
+        }
+
+        private void lbExit_Click_1(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Bạn có muốn thoát game không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.Yes)
+            {
+                this.Close();
+                diem = 100;
+                lbdiem.Text = diem.ToString();
+            }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            lbtime.Text = time.ToString();
+            time++;
         }
 
         private bool CheckWin()

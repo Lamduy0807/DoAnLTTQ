@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            this.bExit = new System.Windows.Forms.Button();
-            this.bNew = new System.Windows.Forms.Button();
             this.bPause = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lvcapdo = new System.Windows.Forms.Label();
+            this.lbcapdo = new System.Windows.Forms.Label();
             this.lbtime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbdiem = new System.Windows.Forms.Label();
@@ -49,6 +48,9 @@
             this.pb2 = new System.Windows.Forms.PictureBox();
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbExit = new System.Windows.Forms.Label();
+            this.lbNew = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbmain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb6)).BeginInit();
@@ -61,30 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bExit
-            // 
-            this.bExit.BackColor = System.Drawing.Color.Crimson;
-            this.bExit.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bExit.Location = new System.Drawing.Point(315, 446);
-            this.bExit.Name = "bExit";
-            this.bExit.Size = new System.Drawing.Size(100, 55);
-            this.bExit.TabIndex = 21;
-            this.bExit.Text = "Exit";
-            this.bExit.UseVisualStyleBackColor = false;
-            this.bExit.Click += new System.EventHandler(this.bExit_Click);
-            // 
-            // bNew
-            // 
-            this.bNew.BackColor = System.Drawing.Color.Crimson;
-            this.bNew.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bNew.Location = new System.Drawing.Point(187, 444);
-            this.bNew.Name = "bNew";
-            this.bNew.Size = new System.Drawing.Size(100, 55);
-            this.bNew.TabIndex = 20;
-            this.bNew.Text = "Game Mới";
-            this.bNew.UseVisualStyleBackColor = false;
-            this.bNew.Click += new System.EventHandler(this.bNew_Click);
             // 
             // bPause
             // 
@@ -121,16 +99,16 @@
             this.label1.Text = "Điểm: ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lvcapdo
+            // lbcapdo
             // 
-            this.lvcapdo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvcapdo.ForeColor = System.Drawing.Color.Black;
-            this.lvcapdo.Location = new System.Drawing.Point(1047, 19);
-            this.lvcapdo.Name = "lvcapdo";
-            this.lvcapdo.Size = new System.Drawing.Size(80, 32);
-            this.lvcapdo.TabIndex = 15;
-            this.lvcapdo.Text = "cấp";
-            this.lvcapdo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbcapdo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcapdo.ForeColor = System.Drawing.Color.Black;
+            this.lbcapdo.Location = new System.Drawing.Point(1047, 19);
+            this.lbcapdo.Name = "lbcapdo";
+            this.lbcapdo.Size = new System.Drawing.Size(80, 32);
+            this.lbcapdo.TabIndex = 15;
+            this.lbcapdo.Text = "cấp";
+            this.lbcapdo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbtime
             // 
@@ -168,7 +146,7 @@
             // pbmain
             // 
             this.pbmain.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbmain.Image = ((System.Drawing.Image)(resources.GetObject("pbmain.Image")));
+            this.pbmain.Image = global::Game_Xếp_Hình.Properties.Resources.main;
             this.pbmain.Location = new System.Drawing.Point(657, 140);
             this.pbmain.Name = "pbmain";
             this.pbmain.Size = new System.Drawing.Size(507, 391);
@@ -278,17 +256,46 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // lbExit
+            // 
+            this.lbExit.BackColor = System.Drawing.Color.Crimson;
+            this.lbExit.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.Location = new System.Drawing.Point(320, 444);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(105, 55);
+            this.lbExit.TabIndex = 24;
+            this.lbExit.Text = "Exit";
+            this.lbExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click_1);
+            // 
+            // lbNew
+            // 
+            this.lbNew.BackColor = System.Drawing.Color.Crimson;
+            this.lbNew.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNew.Location = new System.Drawing.Point(191, 444);
+            this.lbNew.Name = "lbNew";
+            this.lbNew.Size = new System.Drawing.Size(102, 55);
+            this.lbNew.TabIndex = 25;
+            this.lbNew.Text = "Game Mới";
+            this.lbNew.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbNew.Click += new System.EventHandler(this.lbNew_Click_1);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1193, 675);
-            this.Controls.Add(this.bExit);
-            this.Controls.Add(this.bNew);
+            this.Controls.Add(this.lbExit);
+            this.Controls.Add(this.lbNew);
             this.Controls.Add(this.bPause);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lvcapdo);
+            this.Controls.Add(this.lbcapdo);
             this.Controls.Add(this.lbtime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbdiem);
@@ -322,13 +329,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button bExit;
-        private System.Windows.Forms.Button bNew;
         private System.Windows.Forms.Button bPause;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lvcapdo;
+        private System.Windows.Forms.Label lbcapdo;
         private System.Windows.Forms.Label lbtime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbdiem;
@@ -343,5 +347,8 @@
         private System.Windows.Forms.PictureBox pb2;
         private System.Windows.Forms.PictureBox pb1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbExit;
+        private System.Windows.Forms.Label lbNew;
+        private System.Windows.Forms.Timer timer1;
     }
 }
