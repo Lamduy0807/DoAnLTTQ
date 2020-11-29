@@ -245,7 +245,7 @@ namespace Game_Xếp_Hình
         {
             init();
             setmap();
-            diem = 100;
+            diem = 250;
             lbdiem.Text = diem.ToString();
             panel3.BackgroundImage = Properties.Resources.pau;
         }
