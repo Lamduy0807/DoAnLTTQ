@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,14 +20,20 @@ namespace Game_Xếp_Hình
             panel1.BorderStyle = BorderStyle.None;
             this.TransparencyKey = Color.DimGray;
         }
-
+        private void playsoundclick()
+        {
+            SoundPlayer sp = new SoundPlayer("click.wav");
+            sp.Play();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
+            playsoundclick();
             Application.Exit();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
+            playsoundclick();
             this.Hide();
         }
 
