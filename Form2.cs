@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,10 +18,15 @@ namespace Game_Xếp_Hình
             InitializeComponent();
         }
 
-
+        private void playsoundclick()
+        {
+            SoundPlayer sp = new SoundPlayer("click.wav");
+            sp.Play();
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
+            playsoundclick();
             Form3 f3 = new Form3();
             f3.Show();
             this.Hide();
@@ -68,6 +74,7 @@ namespace Game_Xếp_Hình
         }
         private void label2_Click(object sender, EventArgs e)
         {
+            playsoundclick();
             //Quit q = new Quit();
             //q.Show();
             Form bg = new Form();

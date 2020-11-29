@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,6 +51,7 @@ namespace Game_Xếp_Hình
         }
         private void init()
         {
+            TT_game = true;
             x = 2;
             y = 2;
             level = "1";
@@ -81,20 +83,20 @@ namespace Game_Xếp_Hình
 
         private void Form3_Load(object sender, EventArgs e)
         {
-        //    lb_Score.Text = diem.ToString();
-        //    switch (level)
-        //    {
-        //        case 1: lb_MucChoi.Text = "Dễ"; break;
-        //        case 2: lb_MucChoi.Text = "Trung Bình"; break;
-        //        case 3: lb_MucChoi.Text = "Khó"; break;
-        //    }
+            //    lb_Score.Text = diem.ToString();
+            //    switch (level)
+            //    {
+            //        case 1: lb_MucChoi.Text = "Dễ"; break;
+            //        case 2: lb_MucChoi.Text = "Trung Bình"; break;
+            //        case 3: lb_MucChoi.Text = "Khó"; break;
+            //    }
 
             init();
             // showpb();
             setmap();
             diem = 250;
             lbcapdo.Text = level;
-            
+
         }
 
         private void showpb()
@@ -181,29 +183,43 @@ namespace Game_Xếp_Hình
             y = 2;
             showpb();
         }
-        
 
+        private void playsoundswap()
+        {
+            SoundPlayer sp = new SoundPlayer("swap.wav");
+            sp.Play();
+
+        }
+        private void playsoundclick()
+        {
+            SoundPlayer sp = new SoundPlayer("click.wav");
+            sp.Play();
+        }
         private void bPause_KeyUp(object sender, KeyEventArgs e)
         {
             if (TT_game == true)
             {
                 if (e.KeyCode == Keys.Left)
                 {
+                    playsoundswap();
                     //Di chuyển sang phải
                     go_right();
                 }
                 else if (e.KeyCode == Keys.Right)
                 {
+                    playsoundswap();
                     //sang trái
                     go_left();
                 }
                 else if (e.KeyCode == Keys.Up)
                 {
+                    playsoundswap();
                     //xuống dưới
                     go_bottom();
                 }
                 else if (e.KeyCode == Keys.Down)
                 {
+                    playsoundswap();
                     //lên trên
                     go_top();
                 }
@@ -243,6 +259,7 @@ namespace Game_Xếp_Hình
 
         private void panel2_MouseClick(object sender, MouseEventArgs e)
         {
+            playsoundclick();
             init();
             setmap();
             diem = 250;
@@ -252,6 +269,7 @@ namespace Game_Xếp_Hình
 
         private void panel3_MouseClick(object sender, MouseEventArgs e)
         {
+            playsoundclick();
             if (TT_game == true)
             {
                 TT_game = false;
@@ -268,6 +286,7 @@ namespace Game_Xếp_Hình
 
         private void panel4_MouseClick(object sender, MouseEventArgs e)
         {
+            playsoundclick();
             Form2 f = new Form2();
             f.Show();
             this.Hide();
@@ -280,6 +299,7 @@ namespace Game_Xếp_Hình
 
         private void panel9_MouseClick(object sender, MouseEventArgs e)
         {
+            playsoundclick();
             TT_game = false;
             panel3.BackgroundImage = Properties.Resources._continue;
             timer1.Stop();
