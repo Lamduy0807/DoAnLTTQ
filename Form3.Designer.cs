@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.pbmain = new System.Windows.Forms.PictureBox();
-            this.lbExit = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pb9 = new System.Windows.Forms.PictureBox();
@@ -50,6 +49,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -78,24 +78,12 @@
             this.pbmain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbmain.Image = global::Game_Xếp_Hình.Properties.Resources.main;
-            this.pbmain.Location = new System.Drawing.Point(1403, 360);
+            this.pbmain.Location = new System.Drawing.Point(1382, 373);
             this.pbmain.Name = "pbmain";
             this.pbmain.Size = new System.Drawing.Size(243, 192);
             this.pbmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbmain.TabIndex = 3;
             this.pbmain.TabStop = false;
-            // 
-            // lbExit
-            // 
-            this.lbExit.BackColor = System.Drawing.Color.Crimson;
-            this.lbExit.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbExit.Location = new System.Drawing.Point(664, 411);
-            this.lbExit.Name = "lbExit";
-            this.lbExit.Size = new System.Drawing.Size(48, 55);
-            this.lbExit.TabIndex = 24;
-            this.lbExit.Text = "Exit";
-            this.lbExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbExit.Click += new System.EventHandler(this.lbExit_Click_1);
             // 
             // timer1
             // 
@@ -250,7 +238,6 @@
             this.panel10.BackColor = System.Drawing.Color.Transparent;
             this.panel10.Controls.Add(this.lbcapdo);
             this.panel10.Controls.Add(this.label2);
-            this.panel10.Controls.Add(this.lbExit);
             this.panel10.Location = new System.Drawing.Point(1210, 590);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(712, 466);
@@ -258,24 +245,23 @@
             // 
             // lbcapdo
             // 
-            this.lbcapdo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcapdo.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbcapdo.ForeColor = System.Drawing.Color.Black;
             this.lbcapdo.Location = new System.Drawing.Point(303, 48);
             this.lbcapdo.Name = "lbcapdo";
             this.lbcapdo.Size = new System.Drawing.Size(188, 53);
             this.lbcapdo.TabIndex = 38;
-            this.lbcapdo.Text = "cấp";
             this.lbcapdo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(133, 48);
+            this.label2.Location = new System.Drawing.Point(123, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(235, 53);
             this.label2.TabIndex = 37;
-            this.label2.Text = "Cấp Độ:";
+            this.label2.Text = "Level";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
@@ -283,9 +269,9 @@
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(0, 468);
+            this.panel4.Location = new System.Drawing.Point(3, 561);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(95, 99);
+            this.panel4.Size = new System.Drawing.Size(95, 92);
             this.panel4.TabIndex = 29;
             this.panel4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseClick);
             // 
@@ -315,6 +301,7 @@
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.panel7);
             this.panel8.Controls.Add(this.panel4);
             this.panel8.Controls.Add(this.panel5);
@@ -323,15 +310,26 @@
             this.panel8.Controls.Add(this.panel3);
             this.panel8.Location = new System.Drawing.Point(1827, -2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(93, 566);
+            this.panel8.Size = new System.Drawing.Size(93, 651);
             this.panel8.TabIndex = 34;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Transparent;
+            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel9.Location = new System.Drawing.Point(1, 4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(92, 83);
+            this.panel9.TabIndex = 31;
+            this.panel9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel9_MouseClick);
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Transparent;
             this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel7.Location = new System.Drawing.Point(0, 182);
+            this.panel7.Location = new System.Drawing.Point(3, 468);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(90, 89);
             this.panel7.TabIndex = 32;
@@ -341,7 +339,7 @@
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Location = new System.Drawing.Point(0, 4);
+            this.panel5.Location = new System.Drawing.Point(3, 93);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(92, 83);
             this.panel5.TabIndex = 30;
@@ -351,7 +349,7 @@
             this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Location = new System.Drawing.Point(3, 93);
+            this.panel6.Location = new System.Drawing.Point(3, 188);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(92, 83);
             this.panel6.TabIndex = 31;
@@ -361,14 +359,14 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F);
-            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Brown;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(1398, 180);
+            this.label4.Location = new System.Drawing.Point(1353, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(161, 67);
             this.label4.TabIndex = 35;
-            this.label4.Text = "Thời Gian:";
+            this.label4.Text = "Time";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -376,14 +374,14 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F);
-            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Brown;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(1398, 261);
+            this.label1.Location = new System.Drawing.Point(1361, 253);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 69);
+            this.label1.Size = new System.Drawing.Size(153, 69);
             this.label1.TabIndex = 34;
-            this.label1.Text = "Điểm: ";
+            this.label1.Text = "Steps";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbtime
@@ -391,14 +389,13 @@
             this.lbtime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbtime.BackColor = System.Drawing.Color.Transparent;
-            this.lbtime.Font = new System.Drawing.Font("Times New Roman", 13.8F);
-            this.lbtime.ForeColor = System.Drawing.Color.Black;
+            this.lbtime.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtime.ForeColor = System.Drawing.Color.DarkRed;
             this.lbtime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbtime.Location = new System.Drawing.Point(1553, 180);
+            this.lbtime.Location = new System.Drawing.Point(1535, 180);
             this.lbtime.Name = "lbtime";
-            this.lbtime.Size = new System.Drawing.Size(78, 67);
+            this.lbtime.Size = new System.Drawing.Size(120, 67);
             this.lbtime.TabIndex = 33;
-            this.lbtime.Text = "time";
             this.lbtime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbdiem
@@ -406,14 +403,13 @@
             this.lbdiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbdiem.BackColor = System.Drawing.Color.Transparent;
-            this.lbdiem.Font = new System.Drawing.Font("Times New Roman", 13.8F);
-            this.lbdiem.ForeColor = System.Drawing.Color.Black;
+            this.lbdiem.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbdiem.ForeColor = System.Drawing.Color.DarkRed;
             this.lbdiem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbdiem.Location = new System.Drawing.Point(1523, 261);
+            this.lbdiem.Location = new System.Drawing.Point(1535, 261);
             this.lbdiem.Name = "lbdiem";
             this.lbdiem.Size = new System.Drawing.Size(120, 69);
             this.lbdiem.TabIndex = 36;
-            this.lbdiem.Text = "điểm";
             this.lbdiem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bPause
@@ -449,6 +445,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form3";
             this.Text = "Form3";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbmain)).EndInit();
@@ -470,7 +467,6 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pbmain;
-        private System.Windows.Forms.Label lbExit;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pb9;
@@ -497,5 +493,6 @@
         private System.Windows.Forms.Label lbtime;
         private System.Windows.Forms.Label lbdiem;
         private System.Windows.Forms.Button bPause;
+        private System.Windows.Forms.Panel panel9;
     }
 }

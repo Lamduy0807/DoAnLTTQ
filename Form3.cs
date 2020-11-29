@@ -52,7 +52,7 @@ namespace Game_Xếp_Hình
         {
             x = 2;
             y = 2;
-            level = "dễ";
+            level = "1";
             diem = 0;
             time = 0;
             initarr();
@@ -92,7 +92,7 @@ namespace Game_Xếp_Hình
             init();
             // showpb();
             setmap();
-            diem = 100;
+            diem = 250;
             lbcapdo.Text = level;
             
         }
@@ -213,7 +213,7 @@ namespace Game_Xếp_Hình
                     timer1.Stop();
                     init();
                     setmap();
-                    diem = 100;
+                    diem = 250;
                     //ở đât có thể cho level ++
                     // tăng độ khó
 
@@ -226,19 +226,13 @@ namespace Game_Xếp_Hình
         {
             init();
             setmap();
-            diem = 100;
+            diem = 250;
             lbdiem.Text = diem.ToString();
         }
 
         private void lbExit_Click_1(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show("Bạn có muốn thoát game không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (r == DialogResult.Yes)
-            {
-                this.Close();
-                diem = 100;
-                lbdiem.Text = diem.ToString();
-            }
+            
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
@@ -282,6 +276,40 @@ namespace Game_Xếp_Hình
         private void bPause_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel9_MouseClick(object sender, MouseEventArgs e)
+        {
+            TT_game = false;
+            panel3.BackgroundImage = Properties.Resources._continue;
+            timer1.Stop();
+            Form bg = new Form();
+            try
+            {
+                using (Quit q = new Quit())
+                {
+                    bg.StartPosition = FormStartPosition.Manual;
+                    bg.FormBorderStyle = FormBorderStyle.None;
+                    bg.Opacity = .50d;
+                    bg.BackColor = Color.Black;
+                    bg.WindowState = FormWindowState.Maximized;
+                    bg.TopMost = true;
+                    bg.Location = this.Location;
+                    bg.ShowInTaskbar = false;
+                    bg.Show();
+                    q.Owner = bg;
+                    q.ShowDialog();
+                    bg.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                bg.Dispose();
+            }
         }
 
         private bool CheckWin()
