@@ -63,6 +63,7 @@
             this.label1.Size = new System.Drawing.Size(207, 95);
             this.label1.TabIndex = 12;
             this.label1.Text = "NEW";
+            this.label1.Visible = false;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);

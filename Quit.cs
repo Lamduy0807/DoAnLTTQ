@@ -15,16 +15,39 @@ namespace Game_Xếp_Hình
         public Quit()
         {
             InitializeComponent();
+            this.BackColor = Color.DimGray;
+            panel1.BorderStyle = BorderStyle.None;
+            this.TransparencyKey = Color.DimGray;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label1_MouseMove(object sender, MouseEventArgs e)
         {
-            Application.Exit();
+            label1.ForeColor = Color.Red;
+        }
+
+        private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.SaddleBrown;
+        }
+
+        private void label2_MouseMove(object sender, MouseEventArgs e)
+        {
+            label2.ForeColor = Color.Red;
+        }
+
+        private void label2_MouseLeave(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.SaddleBrown;
         }
     }
 }
