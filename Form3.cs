@@ -22,7 +22,25 @@ namespace Game_Xếp_Hình
         {
             InitializeComponent();
         }
-        
+        void TransparetBackground(Control C)
+        {
+            C.Visible = false;
+
+            C.Refresh();
+            Application.DoEvents();
+
+            Rectangle screenRectangle = RectangleToScreen(this.ClientRectangle);
+            int titleHeight = screenRectangle.Top - this.Top;
+            int Right = screenRectangle.Left - this.Left;
+
+            Bitmap bmp = new Bitmap(this.Width, this.Height);
+            this.DrawToBitmap(bmp, new Rectangle(0, 0, this.Width, this.Height));
+            Bitmap bmpImage = new Bitmap(bmp);
+            bmp = bmpImage.Clone(new Rectangle(C.Location.X + Right, C.Location.Y + titleHeight, C.Width, C.Height), bmpImage.PixelFormat);
+            C.BackgroundImage = bmp;
+
+            C.Visible = true;
+        }
         private void initarr()
         {
             for (int i = 1; i < 10; i++)
@@ -204,26 +222,6 @@ namespace Game_Xếp_Hình
             }
         }
 
-        
-
-        
-
-        private void bPause_Click(object sender, EventArgs e)
-        {
-            if (TT_game == true)
-            {
-                TT_game = false;
-                bPause.Text = "Chơi Tiếp";
-                timer1.Stop();
-            }
-            else
-            {
-                TT_game = true;
-                bPause.Text = "Tạm Dừng";
-                timer1.Start();
-            }
-        }
-
         private void lbNew_Click_1(object sender, EventArgs e)
         {
             init();
@@ -247,6 +245,43 @@ namespace Game_Xếp_Hình
         {
             lbtime.Text = time.ToString();
             time++;
+        }
+
+        private void panel2_MouseClick(object sender, MouseEventArgs e)
+        {
+            init();
+            setmap();
+            diem = 100;
+            lbdiem.Text = diem.ToString();
+            panel3.BackgroundImage = Properties.Resources.pau;
+        }
+
+        private void panel3_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (TT_game == true)
+            {
+                TT_game = false;
+                panel3.BackgroundImage = Properties.Resources._continue;
+                timer1.Stop();
+            }
+            else
+            {
+                TT_game = true;
+                panel3.BackgroundImage = Properties.Resources.pau;
+                timer1.Start();
+            }
+        }
+
+        private void panel4_MouseClick(object sender, MouseEventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
+            this.Hide();
+        }
+
+        private void bPause_Click(object sender, EventArgs e)
+        {
+
         }
 
         private bool CheckWin()
