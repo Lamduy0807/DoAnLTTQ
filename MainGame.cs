@@ -233,7 +233,7 @@ namespace Game_Xếp_Hình
             }
         }
 
-        private bool CheckWin()
+        public bool CheckWin()
         {
             for (int i = 0; i < iCell; i++)
             {

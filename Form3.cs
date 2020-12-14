@@ -92,54 +92,6 @@ namespace Game_Xếp_Hình
 
         }
 
-        
-        
-        Random rd = new Random();
-
-        
-        private void bPause_KeyUp(object sender, KeyEventArgs e)
-        {
-            //if (TT_game == true)
-            //{
-            //    if (e.KeyCode == Keys.Left)
-            //    {
-            //        playsoundswap();
-            //        //Di chuyển sang phải
-            //        go_right();
-            //    }
-            //    else if (e.KeyCode == Keys.Right)
-            //    {
-            //        playsoundswap();
-            //        //sang trái
-            //        go_left();
-            //    }
-            //    else if (e.KeyCode == Keys.Up)
-            //    {
-            //        playsoundswap();
-            //        //xuống dưới
-            //        go_bottom();
-            //    }
-            //    else if (e.KeyCode == Keys.Down)
-            //    {
-            //        playsoundswap();
-            //        //lên trên
-            //        go_top();
-            //    }
-            //    if (CheckWin() == true)
-            //    {
-            //        MessageBox.Show("You Win", "", MessageBoxButtons.OK);
-            //        timer1.Stop();
-            //        init();
-            //        setmap();
-            //        diem = 250;
-            //        //ở đât có thể cho level ++
-            //        // tăng độ khó
-
-            //    }
-            //    lbdiem.Text = diem.ToString();
-            //}
-        }
-
         private void lbNew_Click_1(object sender, EventArgs e)
         {
             //init();
@@ -157,14 +109,14 @@ namespace Game_Xếp_Hình
         {
             lbtime.Text = time.ToString();
             time++;
+            if (G.CheckWin())
+                timer1.Stop();
         }
 
         private void panel2_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
-            //init();
-            //setmap();
-            diem = 250;
+            diem = 0;
             lbdiem.Text = diem.ToString();
             panel3.BackgroundImage = Properties.Resources.pau;
         }
@@ -199,6 +151,73 @@ namespace Game_Xếp_Hình
         private void bPause_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel9_MouseMove(object sender, MouseEventArgs e)
+        {
+            lbExit.Visible = true;
+            panel9.MouseLeave += Panel9_MouseLeave;
+        }
+
+        private void Panel9_MouseLeave(object sender, EventArgs e)
+        {
+            lbExit.Visible = false;
+        }
+
+        private void panel5_MouseMove(object sender, MouseEventArgs e)
+        {
+            lbSet.Visible = true;
+            panel5.MouseLeave += Panel5_MouseLeave;
+        }
+
+        private void Panel5_MouseLeave(object sender, EventArgs e)
+        {
+            lbSet.Visible = false;
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            lbRe.Visible = true;
+            panel2.MouseLeave += Panel2_MouseLeave;
+        }
+
+        private void Panel2_MouseLeave(object sender, EventArgs e)
+        {
+            lbRe.Visible = false;
+        }
+
+        private void panel3_MouseMove(object sender, MouseEventArgs e)
+        {
+            lbConPau.Visible = true;
+
+            panel3.MouseLeave += Panel3_MouseLeave;
+        }
+
+        private void Panel3_MouseLeave(object sender, EventArgs e)
+        {
+            lbConPau.Visible = false;
+        }
+
+        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        {
+            lbIn.Visible = true;
+            panel7.MouseLeave += Panel7_MouseLeave;
+        }
+
+        private void Panel7_MouseLeave(object sender, EventArgs e)
+        {
+            lbIn.Visible = false;
+        }
+
+        private void panel4_MouseMove(object sender, MouseEventArgs e)
+        {
+            lbHome.Visible = true;
+            panel4.MouseLeave += Panel4_MouseLeave;
+        }
+
+        private void Panel4_MouseLeave(object sender, EventArgs e)
+        {
+            lbHome.Visible = false;
         }
 
         private void panel9_MouseClick(object sender, MouseEventArgs e)

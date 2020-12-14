@@ -36,10 +36,6 @@ namespace Game_Xếp_Hình
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //label1.Parent = pictureBox2;
-            //label1.BackColor = Color.Transparent;
-            //label2.Parent = pictureBox2;
-            //label2.BackColor = Color.Transparent;
             TransparetBackground(label2);
             TransparetBackground(label1);
         }
