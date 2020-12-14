@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Media;
+
 namespace Game_Xếp_Hình.Properties
 {
 
@@ -26,5 +28,6 @@ namespace Game_Xếp_Hình.Properties
                 return defaultInstance;
             }
         }
+        
     }
 }
