@@ -91,6 +91,12 @@
     <Compile Include="Win.Designer.cs">
       <DependentUpon>Win.cs</DependentUpon>
     </Compile>
+    <Compile Include="winner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winner.Designer.cs">
+      <DependentUpon>winner.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Win.resx">
       <DependentUpon>Win.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winner.resx">
+      <DependentUpon>winner.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
