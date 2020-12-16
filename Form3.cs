@@ -14,8 +14,7 @@ namespace Game_Xếp_Hình
     public partial class Form3 : Form
     {
         private int x, y;
-        private int[] arr = new int[9];
-        private int column = 2, cell = 2;
+        private int column = 3, cell = 3;
         private bool TT_game = false;
         private int time;
         private int diem;
@@ -102,12 +101,12 @@ namespace Game_Xếp_Hình
 
         private void lbExit_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            lbtime.Text = time.ToString();
+            lbtime.Text = (time / 60).ToString() + ":" + (time % 60).ToString();
             time++;
             if (G.CheckWin())
                 timer1.Stop();
@@ -117,8 +116,10 @@ namespace Game_Xếp_Hình
         {
             playsoundclick();
             diem = 0;
+            time = 0;
             lbdiem.Text = diem.ToString();
             panel3.BackgroundImage = Properties.Resources.pau;
+            G.XaoTron();
         }
 
         private void panel3_MouseClick(object sender, MouseEventArgs e)
@@ -220,6 +221,13 @@ namespace Game_Xếp_Hình
             lbHome.Visible = false;
         }
 
+        
+        private void Form3_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            G.Pause_KeyDown(sender, e);
+        }
+
+        
         private void panel9_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
@@ -255,15 +263,6 @@ namespace Game_Xếp_Hình
             }
         }
 
-        private bool CheckWin()
-        {
-            for (int i = 1; i < 10; i++)
-            {
-                if (arr[i - 1] != i)
-                    return false;
-            }
-            return true;
-        }
 
     }
 }

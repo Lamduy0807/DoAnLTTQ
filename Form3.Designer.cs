@@ -49,7 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbtime = new System.Windows.Forms.Label();
             this.lbdiem = new System.Windows.Forms.Label();
-            this.bPause = new System.Windows.Forms.Button();
             this.lbPau = new System.Windows.Forms.Panel();
             this.lbIn = new System.Windows.Forms.Label();
             this.lbHome = new System.Windows.Forms.Label();
@@ -292,18 +291,6 @@
             this.lbdiem.TabIndex = 36;
             this.lbdiem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bPause
-            // 
-            this.bPause.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bPause.BackColor = System.Drawing.Color.Transparent;
-            this.bPause.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bPause.Location = new System.Drawing.Point(-2, 1046);
-            this.bPause.Name = "bPause";
-            this.bPause.Size = new System.Drawing.Size(10, 10);
-            this.bPause.TabIndex = 19;
-            this.bPause.UseVisualStyleBackColor = false;
-            this.bPause.Click += new System.EventHandler(this.bPause_Click);
-            // 
             // lbPau
             // 
             this.lbPau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -408,7 +395,6 @@
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.lbdiem);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.bPause);
             this.Controls.Add(this.pbmain);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -417,6 +403,7 @@
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form3_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form3_KeyUp_1);
             ((System.ComponentModel.ISupportInitialize)(this.pbmain)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -443,7 +430,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbtime;
         private System.Windows.Forms.Label lbdiem;
-        private System.Windows.Forms.Button bPause;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lbOpen;
         private System.Windows.Forms.Label lbStart;
