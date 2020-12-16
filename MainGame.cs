@@ -224,6 +224,72 @@ namespace Game_Xếp_Hình
                 }
             }
         }
+
+        public void Pause_KeyDown(object sender, KeyEventArgs e) //di chuyen bang phim
+        {
+
+            if (!isStart) return;
+            switch (e.KeyCode)
+            {
+                case Keys.Down:
+                    if (iviTriHangOTrong > 0)
+                    {
+                        point++;
+                        lbPoint.Text = point.ToString();
+                        DichOTrongLenTren();
+                        break;
+                    }
+                    else
+                        break;
+                case Keys.Up:
+                    if (iviTriHangOTrong < iCell - 1)
+                    {
+                        point++;
+                        lbPoint.Text = point.ToString();
+                        DichOTrongXuongDuoi();
+                        break;
+                    }
+                    else
+                        break;
+                case Keys.Right:
+                    if (iviTriCotOTrong > 0)
+                    {
+                        point++;
+                        lbPoint.Text = point.ToString();
+                        DichOTrongSangTrai();
+                        break;
+                    }
+                    else
+                        break;
+                case Keys.Left:
+                    if (iviTriCotOTrong < iColumn - 1)
+                    {
+                        point++;
+                        lbPoint.Text = point.ToString();
+                        DichOTrongSangPhai();
+                        break;
+                    }
+                    else
+                        break;
+            }
+            if (CheckWin())
+            {
+                isStart = false;
+                Win s = new Win();
+                s.Show();
+                int chieuRongAnh = pnGame.Width / iColumn;
+                int chieuCaoAnh = pnGame.Height / iCell;
+                PictureBox pb1 = new PictureBox();
+                pb1.BorderStyle = BorderStyle.Fixed3D;
+                pb1.Size = new Size(chieuRongAnh, chieuCaoAnh);
+                pb1.Location = LayViTri(iColumn - 1, iCell - 1);
+                pb1.Image = CropImage(ima, new Rectangle((iCell - 1) * chieuRongAnh, (iColumn - 1) * chieuCaoAnh, chieuRongAnh, chieuCaoAnh));
+                pb1.Tag = string.Format("{0}|{1}", iColumn - 1, iCell - 1);
+                pnGame.Controls.Add(pb1);
+            }
+
+
+        }
         private void Delay(int miliseconds)
         {
             int x = 0;
@@ -283,7 +349,7 @@ namespace Game_Xếp_Hình
             Bitmap bmpImage = new Bitmap(img);
             return bmpImage.Clone(cropArea, bmpImage.PixelFormat);
         }
-        private void XaoTron()
+        public void XaoTron()
         {
             Random rd = new Random();
             for (int t = 0; t < 5000; t++)
