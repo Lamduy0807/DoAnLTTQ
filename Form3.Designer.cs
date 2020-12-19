@@ -34,10 +34,10 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.lbOpen = new System.Windows.Forms.Label();
+            this.LbChooseImage = new System.Windows.Forms.Label();
             this.lbStart = new System.Windows.Forms.Label();
             this.lbcapdo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbLevel = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,6 +56,9 @@
             this.lbRe = new System.Windows.Forms.Label();
             this.lbSet = new System.Windows.Forms.Label();
             this.lbExit = new System.Windows.Forms.Label();
+            this.lb_level = new System.Windows.Forms.Label();
+            this.pn_Next = new System.Windows.Forms.Panel();
+            this.pn_Return = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbmain)).BeginInit();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -92,23 +95,24 @@
             // 
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.Transparent;
-            this.panel10.Controls.Add(this.lbOpen);
+            this.panel10.Controls.Add(this.LbChooseImage);
             this.panel10.Controls.Add(this.lbStart);
             this.panel10.Location = new System.Drawing.Point(1210, 674);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(712, 382);
             this.panel10.TabIndex = 36;
             // 
-            // lbOpen
+            // LbChooseImage
             // 
-            this.lbOpen.Font = new System.Drawing.Font("Stencil", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOpen.ForeColor = System.Drawing.Color.Red;
-            this.lbOpen.Location = new System.Drawing.Point(203, 45);
-            this.lbOpen.Name = "lbOpen";
-            this.lbOpen.Size = new System.Drawing.Size(235, 53);
-            this.lbOpen.TabIndex = 41;
-            this.lbOpen.Text = "Open..";
-            this.lbOpen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LbChooseImage.Font = new System.Drawing.Font("Stencil", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbChooseImage.ForeColor = System.Drawing.Color.Red;
+            this.LbChooseImage.Location = new System.Drawing.Point(153, 45);
+            this.LbChooseImage.Name = "LbChooseImage";
+            this.LbChooseImage.Size = new System.Drawing.Size(370, 53);
+            this.LbChooseImage.TabIndex = 41;
+            this.LbChooseImage.Text = "Choose Image";
+            this.LbChooseImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LbChooseImage.Click += new System.EventHandler(this.LbChooseImage_Click);
             // 
             // lbStart
             // 
@@ -128,25 +132,25 @@
             this.lbcapdo.BackColor = System.Drawing.Color.Transparent;
             this.lbcapdo.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbcapdo.ForeColor = System.Drawing.Color.Coral;
-            this.lbcapdo.Location = new System.Drawing.Point(1530, 91);
+            this.lbcapdo.Location = new System.Drawing.Point(1520, 91);
             this.lbcapdo.Name = "lbcapdo";
             this.lbcapdo.Size = new System.Drawing.Size(139, 62);
             this.lbcapdo.TabIndex = 38;
             this.lbcapdo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lbLevel
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbLevel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Coral;
-            this.label2.Location = new System.Drawing.Point(1375, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 53);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Level";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbLevel.BackColor = System.Drawing.Color.Transparent;
+            this.lbLevel.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLevel.ForeColor = System.Drawing.Color.Coral;
+            this.lbLevel.Location = new System.Drawing.Point(1448, 32);
+            this.lbLevel.Name = "lbLevel";
+            this.lbLevel.Size = new System.Drawing.Size(160, 53);
+            this.lbLevel.TabIndex = 37;
+            this.lbLevel.Text = "Level";
+            this.lbLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -243,7 +247,7 @@
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label4.Location = new System.Drawing.Point(1375, 331);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(161, 67);
+            this.label4.Size = new System.Drawing.Size(150, 67);
             this.label4.TabIndex = 35;
             this.label4.Text = "Time";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -271,10 +275,11 @@
             this.lbtime.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtime.ForeColor = System.Drawing.Color.DarkRed;
             this.lbtime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbtime.Location = new System.Drawing.Point(1570, 331);
+            this.lbtime.Location = new System.Drawing.Point(1520, 331);
             this.lbtime.Name = "lbtime";
-            this.lbtime.Size = new System.Drawing.Size(120, 67);
+            this.lbtime.Size = new System.Drawing.Size(220, 67);
             this.lbtime.TabIndex = 33;
+            this.lbtime.Text = "0 s";
             this.lbtime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbdiem
@@ -289,6 +294,7 @@
             this.lbdiem.Name = "lbdiem";
             this.lbdiem.Size = new System.Drawing.Size(120, 69);
             this.lbdiem.TabIndex = 36;
+            this.lbdiem.Text = "0";
             this.lbdiem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbPau
@@ -378,6 +384,46 @@
             this.lbExit.Text = "Exit";
             this.lbExit.Visible = false;
             // 
+            // lb_level
+            // 
+            this.lb_level.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_level.BackColor = System.Drawing.Color.Transparent;
+            this.lb_level.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_level.ForeColor = System.Drawing.Color.Coral;
+            this.lb_level.Location = new System.Drawing.Point(1470, 96);
+            this.lb_level.Name = "lb_level";
+            this.lb_level.Size = new System.Drawing.Size(115, 53);
+            this.lb_level.TabIndex = 40;
+            this.lb_level.Text = "3x3";
+            this.lb_level.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pn_Next
+            // 
+            this.pn_Next.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pn_Next.BackColor = System.Drawing.Color.Transparent;
+            this.pn_Next.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pn_Next.BackgroundImage")));
+            this.pn_Next.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pn_Next.Location = new System.Drawing.Point(1593, 96);
+            this.pn_Next.Name = "pn_Next";
+            this.pn_Next.Size = new System.Drawing.Size(56, 57);
+            this.pn_Next.TabIndex = 41;
+            this.pn_Next.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pn_Next_MouseClick);
+            // 
+            // pn_Return
+            // 
+            this.pn_Return.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pn_Return.BackColor = System.Drawing.Color.Transparent;
+            this.pn_Return.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pn_Return.BackgroundImage")));
+            this.pn_Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pn_Return.Location = new System.Drawing.Point(1404, 96);
+            this.pn_Return.Name = "pn_Return";
+            this.pn_Return.Size = new System.Drawing.Size(45, 53);
+            this.pn_Return.TabIndex = 42;
+            this.pn_Return.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pn_Return_MouseClick);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -385,10 +431,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1920, 1055);
+            this.Controls.Add(this.pn_Return);
+            this.Controls.Add(this.pn_Next);
+            this.Controls.Add(this.lb_level);
             this.Controls.Add(this.lbPau);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbcapdo);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbLevel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.lbtime);
@@ -402,7 +451,6 @@
             this.Text = "Form3";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form3_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form3_KeyUp_1);
             ((System.ComponentModel.ISupportInitialize)(this.pbmain)).EndInit();
             this.panel10.ResumeLayout(false);
@@ -425,13 +473,13 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lbcapdo;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbLevel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbtime;
         private System.Windows.Forms.Label lbdiem;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label lbOpen;
+        private System.Windows.Forms.Label LbChooseImage;
         private System.Windows.Forms.Label lbStart;
         private System.Windows.Forms.Panel lbPau;
         private System.Windows.Forms.Label lbIn;
@@ -440,5 +488,8 @@
         private System.Windows.Forms.Label lbRe;
         private System.Windows.Forms.Label lbSet;
         private System.Windows.Forms.Label lbExit;
+        private System.Windows.Forms.Label lb_level;
+        private System.Windows.Forms.Panel pn_Next;
+        private System.Windows.Forms.Panel pn_Return;
     }
 }
