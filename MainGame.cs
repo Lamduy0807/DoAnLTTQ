@@ -56,6 +56,12 @@ namespace Game_Xếp_Hình
         {
             return stringFileName;
         }
+
+        public void SetColumnCell(int column, int cell)
+        {
+            iColumn = column;
+            iCell = cell;
+        }
         public void SetPanel(int a, int b)
         {
             Wpanel = a;
@@ -73,7 +79,7 @@ namespace Game_Xếp_Hình
                 //CatAnh(ima);
             }
         }
-        public void open()
+        public void open(int column, int cell)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "*.jpg|*.jpg";
@@ -84,9 +90,11 @@ namespace Game_Xếp_Hình
                 pnGame.Controls.Clear();
                 Image anhNho = Image.FromFile(ofd.FileName).GetThumbnailImage(pnGame.Size.Width, pnGame.Size.Height, null, new IntPtr());
                 stringFileName = ofd.FileName;
+                SetColumnCell(column, cell);
                 CatAnh(anhNho);
-                //XaoTron();
+
             }
+
         }
         public void start()
         {

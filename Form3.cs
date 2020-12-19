@@ -13,12 +13,10 @@ namespace Game_Xếp_Hình
 {
     public partial class Form3 : Form
     {
-        private int x, y;
         private int column = 3, cell = 3;
         private bool TT_game = false;
         private int time;
         private int diem;
-        private string level;
         private string FileName;
         public MainGame G;
         public Form3()
@@ -26,14 +24,15 @@ namespace Game_Xếp_Hình
             InitializeComponent();
             G = new MainGame(panel1, lbdiem, column, cell, Game_Xếp_Hình.Properties.Resources.main, TT_game);
             G.SetPanel(panel1.Width, panel1.Height);
-            lbOpen.Click += LbOpen_Click;
         }
 
-        private void LbOpen_Click(object sender, EventArgs e)
+        private void lbChooseImage_Click(object sender, EventArgs e)
         {
+
+            playsoundclick();
             if (!TT_game)
             {
-                G.open();
+                G.open(column, cell);
                 FileName = G.GetImage();
                 pbmain.Image = Image.FromFile(FileName);
                 lbStart.Click += LbStart_Click;
@@ -81,32 +80,10 @@ namespace Game_Xếp_Hình
 
         }
 
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
-            // showpb();
-            //setmap();
-            //diem = 250;
-            //lbcapdo.Text = level;
-
-        }
-
-        private void lbNew_Click_1(object sender, EventArgs e)
-        {
-            //init();
-            //setmap();
-            diem = 250;
-            lbdiem.Text = diem.ToString();
-        }
-
-        private void lbExit_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            lbtime.Text = (time / 60).ToString() + ":" + (time % 60).ToString();
+            lbtime.Text = (time / 60).ToString() + ":" + (time % 60).ToString() + "s";
             time++;
             if (G.CheckWin())
                 timer1.Stop();
@@ -149,10 +126,7 @@ namespace Game_Xếp_Hình
             this.Hide();
         }
 
-        private void bPause_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void panel9_MouseMove(object sender, MouseEventArgs e)
         {
@@ -221,13 +195,70 @@ namespace Game_Xếp_Hình
             lbHome.Visible = false;
         }
 
-        
+        private void pn_Next_MouseClick(object sender, MouseEventArgs e)
+        {
+            playsoundclick();
+            if (lb_level.Text == "3x3")
+            {
+                lb_level.Text = "4x4";
+                column = 4;
+                cell = 4;
+            }
+            else if (lb_level.Text == "4x4")
+            {
+                lb_level.Text = "5x5";
+                column = 5;
+                cell = 5;
+            }
+            else if (lb_level.Text == "5x5")
+            {
+                lb_level.Text = "3x3";
+                column = 3;
+                cell = 3;
+            }
+        }
+
+        private void LbChooseImage_Click(object sender, EventArgs e)
+        {
+            playsoundclick();
+            if (!TT_game)
+            {
+                G.open(column, cell);
+                FileName = G.GetImage();
+                pbmain.Image = Image.FromFile(FileName);
+                lbStart.Click += LbStart_Click;
+                panel1.Visible = true;
+            }
+        }
+
         private void Form3_KeyUp_1(object sender, KeyEventArgs e)
         {
             G.Pause_KeyDown(sender, e);
         }
 
-        
+        private void pn_Return_MouseClick(object sender, MouseEventArgs e)
+        {
+            playsoundclick();
+            if (lb_level.Text == "3x3")
+            {
+                lb_level.Text = "5x5";
+                column = 5;
+                cell = 5;
+            }
+            else if (lb_level.Text == "4x4")
+            {
+                lb_level.Text = "3x3";
+                column = 3;
+                cell = 3;
+            }
+            else if (lb_level.Text == "5x5")
+            {
+                lb_level.Text = "4x4";
+                column = 4;
+                cell = 4;
+            }
+        }
+
         private void panel9_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
