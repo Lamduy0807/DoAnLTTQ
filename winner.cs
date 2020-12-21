@@ -15,6 +15,8 @@ namespace Game_Xếp_Hình
         public winner()
         {
             InitializeComponent();
+            this.BackColor = Color.DimGray;
+            this.TransparencyKey = Color.DimGray;
         }
     }
 }

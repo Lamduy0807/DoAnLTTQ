@@ -15,6 +15,8 @@ namespace Game_Xếp_Hình
     {
         private int column = 3, cell = 3;
         private bool TT_game = false;
+        private bool Ispause = false;
+        private bool CheckHaveImage = false;
         private int time;
         private int diem;
         private string FileName;
@@ -26,26 +28,29 @@ namespace Game_Xếp_Hình
             G.SetPanel(panel1.Width, panel1.Height);
         }
 
-        private void lbChooseImage_Click(object sender, EventArgs e)
-        {
+        //private void lbChooseImage_Click(object sender, EventArgs e)
+        //{
 
-            playsoundclick();
-            if (!TT_game)
-            {
-                G.open(column, cell);
-                FileName = G.GetImage();
-                pbmain.Image = Image.FromFile(FileName);
-                lbStart.Click += LbStart_Click;
-                panel1.Visible = true;
-            }
-        }
+        //    playsoundclick();
+        //    if (!TT_game)
+        //    {
+        //        G.open(column, cell);
+        //        FileName = G.GetImage();
+        //        pbmain.Image = Image.FromFile(FileName);
+        //        lbStart.Click += LbStart_Click;
+        //        panel1.Visible = true;
+        //    }
+        //}
 
         private void LbStart_Click(object sender, EventArgs e)
         {
-            G.start();
-            timer1.Start();
-            TT_game = true;
-            G.SetStart(TT_game);
+            if (!Ispause)
+            {
+                G.start();
+                timer1.Start();
+                TT_game = true;
+                G.SetStart(TT_game);
+            }
         }
 
         void TransparetBackground(Control C)
@@ -93,6 +98,8 @@ namespace Game_Xếp_Hình
         {
             playsoundclick();
             diem = 0;
+            G.ResetPoint();
+            lbtime.Text = "0 s";
             time = 0;
             lbdiem.Text = diem.ToString();
             panel3.BackgroundImage = Properties.Resources.pau;
@@ -104,18 +111,22 @@ namespace Game_Xếp_Hình
             playsoundclick();
             if (TT_game == true)
             {
+                Ispause = true;
                 TT_game = false;
                 G.SetStart(TT_game);
                 panel3.BackgroundImage = Properties.Resources._continue;
                 timer1.Stop();
             }
-            else
+            else if (TT_game == false && CheckHaveImage == true)
             {
+                Ispause = false;
                 TT_game = true;
                 G.SetStart(TT_game);
                 panel3.BackgroundImage = Properties.Resources.pau;
                 timer1.Start();
             }
+            else
+                return;
         }
 
         private void panel4_MouseClick(object sender, MouseEventArgs e)
@@ -223,6 +234,14 @@ namespace Game_Xếp_Hình
             playsoundclick();
             if (!TT_game)
             {
+                Ispause = false;
+                CheckHaveImage = true;
+                panel3.BackgroundImage = Properties.Resources.pau;
+                time = 0;
+                lbtime.Text = "0 s";
+                diem = 0;
+                G.ResetPoint();
+                lbdiem.Text = diem.ToString();
                 G.open(column, cell);
                 FileName = G.GetImage();
                 pbmain.Image = Image.FromFile(FileName);
@@ -256,6 +275,45 @@ namespace Game_Xếp_Hình
                 lb_level.Text = "4x4";
                 column = 4;
                 cell = 4;
+            }
+        }
+
+        private void panel7_Click(object sender, EventArgs e)
+        {
+            playsoundclick();
+            if (!TT_game)
+            { 
+                TT_game = false;
+                if (CheckHaveImage)
+                    panel3.BackgroundImage = Properties.Resources._continue;
+                timer1.Stop();
+                Form bg = new Form();
+                try
+                {
+                    using (Instruc q = new Instruc())
+                    {
+                        bg.StartPosition = FormStartPosition.Manual;
+                        bg.FormBorderStyle = FormBorderStyle.None;
+                        bg.Opacity = .50d;
+                        bg.BackColor = Color.Black;
+                        bg.WindowState = FormWindowState.Maximized;
+                        bg.TopMost = true;
+                        bg.Location = this.Location;
+                        bg.ShowInTaskbar = false;
+                        bg.Show();
+                        q.Owner = bg;
+                        q.ShowDialog();
+                        bg.Dispose();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    bg.Dispose();
+                }
             }
         }
 

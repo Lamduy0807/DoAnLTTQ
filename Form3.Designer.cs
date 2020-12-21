@@ -69,7 +69,7 @@
             // 
             this.pbmain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbmain.Location = new System.Drawing.Point(1404, 431);
+            this.pbmain.Location = new System.Drawing.Point(1404, 436);
             this.pbmain.Name = "pbmain";
             this.pbmain.Size = new System.Drawing.Size(234, 213);
             this.pbmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,6 +224,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(90, 89);
             this.panel7.TabIndex = 32;
+            this.panel7.Click += new System.EventHandler(this.panel7_Click);
             this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
             // 
             // panel5
