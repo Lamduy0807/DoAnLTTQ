@@ -96,6 +96,10 @@ namespace Game_Xếp_Hình
             }
 
         }
+        public void ResetPoint()
+        {
+            point = 0;
+        }
         public void start()
         {
             if(!isStart)
