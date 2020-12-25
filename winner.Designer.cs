@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winner));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbstep = new System.Windows.Forms.Label();
+            this.lbStep = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbOK = new System.Windows.Forms.Label();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,27 +42,27 @@
             this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.lbstep);
+            this.panel1.Controls.Add(this.lbStep);
             this.panel1.Controls.Add(this.lbTime);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.lbOK);
+            this.panel1.Controls.Add(this.tbName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(614, 600);
             this.panel1.TabIndex = 0;
             // 
-            // lbstep
+            // lbStep
             // 
-            this.lbstep.AutoSize = true;
-            this.lbstep.BackColor = System.Drawing.Color.Transparent;
-            this.lbstep.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbstep.ForeColor = System.Drawing.Color.Maroon;
-            this.lbstep.Location = new System.Drawing.Point(454, 286);
-            this.lbstep.Name = "lbstep";
-            this.lbstep.Size = new System.Drawing.Size(84, 40);
-            this.lbstep.TabIndex = 17;
-            this.lbstep.Text = "label";
+            this.lbStep.AutoSize = true;
+            this.lbStep.BackColor = System.Drawing.Color.Transparent;
+            this.lbStep.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStep.ForeColor = System.Drawing.Color.Maroon;
+            this.lbStep.Location = new System.Drawing.Point(454, 286);
+            this.lbStep.Name = "lbStep";
+            this.lbStep.Size = new System.Drawing.Size(84, 40);
+            this.lbStep.TabIndex = 17;
+            this.lbStep.Text = "label";
             // 
             // lbTime
             // 
@@ -76,29 +76,30 @@
             this.lbTime.TabIndex = 16;
             this.lbTime.Text = "label";
             // 
-            // label2
+            // lbOK
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label2.Location = new System.Drawing.Point(269, 484);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 51);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "OK";
+            this.lbOK.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbOK.AutoSize = true;
+            this.lbOK.BackColor = System.Drawing.Color.Transparent;
+            this.lbOK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbOK.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOK.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lbOK.Location = new System.Drawing.Point(269, 484);
+            this.lbOK.Name = "lbOK";
+            this.lbOK.Size = new System.Drawing.Size(88, 51);
+            this.lbOK.TabIndex = 15;
+            this.lbOK.Text = "OK";
+            this.lbOK.Click += new System.EventHandler(this.lbOK_Click);
             // 
-            // textBox1
+            // tbName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Peru;
-            this.textBox1.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(243, 379);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 45);
-            this.textBox1.TabIndex = 0;
+            this.tbName.BackColor = System.Drawing.Color.Peru;
+            this.tbName.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbName.ForeColor = System.Drawing.Color.Black;
+            this.tbName.Location = new System.Drawing.Point(243, 379);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(243, 45);
+            this.tbName.TabIndex = 0;
             // 
             // winner
             // 
@@ -119,9 +120,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbstep;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.Label lbStep;
         private System.Windows.Forms.Label lbTime;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbOK;
     }
 }
