@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cWinner.cs" />
     <Compile Include="EButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -85,6 +86,7 @@
     <Compile Include="Quit.Designer.cs">
       <DependentUpon>Quit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Record.cs" />
     <Compile Include="Setting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +104,12 @@
     </Compile>
     <Compile Include="winner.Designer.cs">
       <DependentUpon>winner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinnerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinnerList.Designer.cs">
+      <DependentUpon>WinnerList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -136,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="winner.resx">
       <DependentUpon>winner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinnerList.resx">
+      <DependentUpon>WinnerList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -69,7 +69,7 @@
             // 
             this.pbmain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbmain.Location = new System.Drawing.Point(1404, 436);
+            this.pbmain.Location = new System.Drawing.Point(1391, 436);
             this.pbmain.Name = "pbmain";
             this.pbmain.Size = new System.Drawing.Size(234, 213);
             this.pbmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,7 +132,7 @@
             this.lbcapdo.BackColor = System.Drawing.Color.Transparent;
             this.lbcapdo.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbcapdo.ForeColor = System.Drawing.Color.Coral;
-            this.lbcapdo.Location = new System.Drawing.Point(1520, 91);
+            this.lbcapdo.Location = new System.Drawing.Point(1490, 105);
             this.lbcapdo.Name = "lbcapdo";
             this.lbcapdo.Size = new System.Drawing.Size(139, 62);
             this.lbcapdo.TabIndex = 38;
@@ -145,7 +145,7 @@
             this.lbLevel.BackColor = System.Drawing.Color.Transparent;
             this.lbLevel.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLevel.ForeColor = System.Drawing.Color.Coral;
-            this.lbLevel.Location = new System.Drawing.Point(1448, 32);
+            this.lbLevel.Location = new System.Drawing.Point(1418, 46);
             this.lbLevel.Name = "lbLevel";
             this.lbLevel.Size = new System.Drawing.Size(160, 53);
             this.lbLevel.TabIndex = 37;
@@ -236,6 +236,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(92, 83);
             this.panel5.TabIndex = 30;
+            this.panel5.Click += new System.EventHandler(this.panel5_Click);
             this.panel5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
             // 
             // label4
@@ -246,7 +247,7 @@
             this.label4.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Brown;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(1375, 331);
+            this.label4.Location = new System.Drawing.Point(1352, 345);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(150, 67);
             this.label4.TabIndex = 35;
@@ -261,7 +262,7 @@
             this.label1.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Brown;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(1375, 250);
+            this.label1.Location = new System.Drawing.Point(1352, 264);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 69);
             this.label1.TabIndex = 34;
@@ -276,7 +277,7 @@
             this.lbtime.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtime.ForeColor = System.Drawing.Color.DarkRed;
             this.lbtime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbtime.Location = new System.Drawing.Point(1520, 331);
+            this.lbtime.Location = new System.Drawing.Point(1497, 345);
             this.lbtime.Name = "lbtime";
             this.lbtime.Size = new System.Drawing.Size(220, 67);
             this.lbtime.TabIndex = 33;
@@ -291,7 +292,7 @@
             this.lbdiem.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbdiem.ForeColor = System.Drawing.Color.DarkRed;
             this.lbdiem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbdiem.Location = new System.Drawing.Point(1549, 250);
+            this.lbdiem.Location = new System.Drawing.Point(1526, 264);
             this.lbdiem.Name = "lbdiem";
             this.lbdiem.Size = new System.Drawing.Size(120, 69);
             this.lbdiem.TabIndex = 36;
@@ -366,11 +367,11 @@
             this.lbSet.AutoSize = true;
             this.lbSet.BackColor = System.Drawing.Color.White;
             this.lbSet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSet.Location = new System.Drawing.Point(80, 110);
+            this.lbSet.Location = new System.Drawing.Point(72, 118);
             this.lbSet.Name = "lbSet";
-            this.lbSet.Size = new System.Drawing.Size(67, 24);
+            this.lbSet.Size = new System.Drawing.Size(75, 24);
             this.lbSet.TabIndex = 1;
-            this.lbSet.Text = "Setting";
+            this.lbSet.Text = "Options";
             this.lbSet.Visible = false;
             // 
             // lbExit
@@ -392,7 +393,7 @@
             this.lb_level.BackColor = System.Drawing.Color.Transparent;
             this.lb_level.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_level.ForeColor = System.Drawing.Color.Coral;
-            this.lb_level.Location = new System.Drawing.Point(1470, 96);
+            this.lb_level.Location = new System.Drawing.Point(1440, 110);
             this.lb_level.Name = "lb_level";
             this.lb_level.Size = new System.Drawing.Size(115, 53);
             this.lb_level.TabIndex = 40;
@@ -406,7 +407,7 @@
             this.pn_Next.BackColor = System.Drawing.Color.Transparent;
             this.pn_Next.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pn_Next.BackgroundImage")));
             this.pn_Next.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pn_Next.Location = new System.Drawing.Point(1593, 96);
+            this.pn_Next.Location = new System.Drawing.Point(1563, 110);
             this.pn_Next.Name = "pn_Next";
             this.pn_Next.Size = new System.Drawing.Size(56, 57);
             this.pn_Next.TabIndex = 41;
@@ -419,7 +420,7 @@
             this.pn_Return.BackColor = System.Drawing.Color.Transparent;
             this.pn_Return.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pn_Return.BackgroundImage")));
             this.pn_Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pn_Return.Location = new System.Drawing.Point(1404, 96);
+            this.pn_Return.Location = new System.Drawing.Point(1374, 110);
             this.pn_Return.Name = "pn_Return";
             this.pn_Return.Size = new System.Drawing.Size(45, 53);
             this.pn_Return.TabIndex = 42;

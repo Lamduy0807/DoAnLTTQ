@@ -49,7 +49,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(614, 600);
+            this.panel1.Size = new System.Drawing.Size(764, 600);
             this.panel1.TabIndex = 0;
             // 
             // lbStep
@@ -57,8 +57,8 @@
             this.lbStep.AutoSize = true;
             this.lbStep.BackColor = System.Drawing.Color.Transparent;
             this.lbStep.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStep.ForeColor = System.Drawing.Color.Maroon;
-            this.lbStep.Location = new System.Drawing.Point(454, 286);
+            this.lbStep.ForeColor = System.Drawing.Color.Black;
+            this.lbStep.Location = new System.Drawing.Point(446, 278);
             this.lbStep.Name = "lbStep";
             this.lbStep.Size = new System.Drawing.Size(84, 40);
             this.lbStep.TabIndex = 17;
@@ -69,8 +69,8 @@
             this.lbTime.AutoSize = true;
             this.lbTime.BackColor = System.Drawing.Color.Transparent;
             this.lbTime.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.ForeColor = System.Drawing.Color.Maroon;
-            this.lbTime.Location = new System.Drawing.Point(214, 286);
+            this.lbTime.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lbTime.Location = new System.Drawing.Point(446, 220);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(84, 40);
             this.lbTime.TabIndex = 16;
@@ -83,8 +83,8 @@
             this.lbOK.BackColor = System.Drawing.Color.Transparent;
             this.lbOK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbOK.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOK.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lbOK.Location = new System.Drawing.Point(269, 484);
+            this.lbOK.ForeColor = System.Drawing.Color.Black;
+            this.lbOK.Location = new System.Drawing.Point(366, 452);
             this.lbOK.Name = "lbOK";
             this.lbOK.Size = new System.Drawing.Size(88, 51);
             this.lbOK.TabIndex = 15;
@@ -93,10 +93,10 @@
             // 
             // tbName
             // 
-            this.tbName.BackColor = System.Drawing.Color.Peru;
+            this.tbName.BackColor = System.Drawing.Color.SandyBrown;
             this.tbName.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.ForeColor = System.Drawing.Color.Black;
-            this.tbName.Location = new System.Drawing.Point(243, 379);
+            this.tbName.Location = new System.Drawing.Point(408, 362);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(243, 45);
             this.tbName.TabIndex = 0;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 600);
+            this.ClientSize = new System.Drawing.Size(764, 600);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "winner";

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -13,6 +14,8 @@ namespace Game_Xếp_Hình
 {
     public partial class Form3 : Form
     {
+        private bool flagmusic = true;
+        private bool IsXT = false;
         private int column = 3, cell = 3;
         private bool TT_game = false;
         private bool Ispause = false;
@@ -21,26 +24,13 @@ namespace Game_Xếp_Hình
         private int diem;
         private string FileName;
         public MainGame G;
+        private string cTime, cStep;
         public Form3()
         {
             InitializeComponent();
             G = new MainGame(panel1, lbdiem, column, cell, Game_Xếp_Hình.Properties.Resources.main, TT_game);
             G.SetPanel(panel1.Width, panel1.Height);
         }
-
-        //private void lbChooseImage_Click(object sender, EventArgs e)
-        //{
-
-        //    playsoundclick();
-        //    if (!TT_game)
-        //    {
-        //        G.open(column, cell);
-        //        FileName = G.GetImage();
-        //        pbmain.Image = Image.FromFile(FileName);
-        //        lbStart.Click += LbStart_Click;
-        //        panel1.Visible = true;
-        //    }
-        //}
 
         private void LbStart_Click(object sender, EventArgs e)
         {
@@ -50,6 +40,7 @@ namespace Game_Xếp_Hình
                 timer1.Start();
                 TT_game = true;
                 G.SetStart(TT_game);
+                IsXT = true;
             }
         }
 
@@ -75,35 +66,52 @@ namespace Game_Xếp_Hình
 
         public void playsoundclick()
         {
-            SoundPlayer sp = new SoundPlayer("click.wav");
-            sp.Play();
+            if (flagmusic == true)
+            {
+                SoundPlayer sp = new SoundPlayer("click.wav");
+                sp.Play();
+            }
         }
         public void playsoundswap()
         {
-            SoundPlayer sp = new SoundPlayer("swap.wav");
-            sp.Play();
-
+            if (flagmusic == true)
+            {
+                SoundPlayer sp = new SoundPlayer("swap.wav");
+                sp.Play();
+            }
         }
-
-
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             lbtime.Text = (time / 60).ToString() + ":" + (time % 60).ToString() + "s";
             time++;
-            if (G.CheckWin())
+            cTime = lbtime.Text;
+            cStep = lbdiem.Text;
+            if (G.CheckWin()&& IsXT)
+            {
                 timer1.Stop();
+                TT_game = false;
+                G.SetStart(false);
+                Ispause = false;
+                IsXT = false;
+                panel3.BackgroundImage = Properties.Resources._continue;
+                Win s = new Win(cTime,cStep);
+                s.Show();
+            }
         }
 
         private void panel2_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
-            diem = 0;
-            G.ResetPoint();
-            lbtime.Text = "0 s";
-            time = 0;
-            lbdiem.Text = diem.ToString();
-            panel3.BackgroundImage = Properties.Resources.pau;
-            G.XaoTron();
+            if (TT_game)
+            {
+                diem = 0;
+                G.ResetPoint();
+                lbtime.Text = "0 s";
+                time = 0;
+                lbdiem.Text = diem.ToString();
+                panel3.BackgroundImage = Properties.Resources.pau;
+                G.XaoTron();
+            }
         }
 
         private void panel3_MouseClick(object sender, MouseEventArgs e)
@@ -117,7 +125,7 @@ namespace Game_Xếp_Hình
                 panel3.BackgroundImage = Properties.Resources._continue;
                 timer1.Stop();
             }
-            else if (TT_game == false && CheckHaveImage == true)
+            else if (TT_game == false && CheckHaveImage == true && IsXT)
             {
                 Ispause = false;
                 TT_game = true;
@@ -209,33 +217,37 @@ namespace Game_Xếp_Hình
         private void pn_Next_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
-            if (lb_level.Text == "3x3")
+            if (!TT_game)
             {
-                lb_level.Text = "4x4";
-                column = 4;
-                cell = 4;
-            }
-            else if (lb_level.Text == "4x4")
-            {
-                lb_level.Text = "5x5";
-                column = 5;
-                cell = 5;
-            }
-            else if (lb_level.Text == "5x5")
-            {
-                lb_level.Text = "3x3";
-                column = 3;
-                cell = 3;
+                if (lb_level.Text == "3x3")
+                {
+                    lb_level.Text = "4x4";
+                    column = 4;
+                    cell = 4;
+                }
+                else if (lb_level.Text == "4x4")
+                {
+                    lb_level.Text = "5x5";
+                    column = 5;
+                    cell = 5;
+                }
+                else if (lb_level.Text == "5x5")
+                {
+                    lb_level.Text = "3x3";
+                    column = 3;
+                    cell = 3;
+                }
             }
         }
 
         private void LbChooseImage_Click(object sender, EventArgs e)
         {
             playsoundclick();
-            if (!TT_game)
+
+            if (!TT_game )
             {
                 Ispause = false;
-                CheckHaveImage = true;
+                IsXT = false;
                 panel3.BackgroundImage = Properties.Resources.pau;
                 time = 0;
                 lbtime.Text = "0 s";
@@ -243,10 +255,14 @@ namespace Game_Xếp_Hình
                 G.ResetPoint();
                 lbdiem.Text = diem.ToString();
                 G.open(column, cell);
-                FileName = G.GetImage();
-                pbmain.Image = Image.FromFile(FileName);
-                lbStart.Click += LbStart_Click;
-                panel1.Visible = true;
+                if (!string.IsNullOrEmpty(G.GetImage()))
+                {
+                    FileName = G.GetImage();
+                    pbmain.Image = Image.FromFile(FileName);
+                    CheckHaveImage = true;
+                    lbStart.Click += LbStart_Click;
+                    panel1.Visible = true;
+                }
             }
         }
 
@@ -258,23 +274,26 @@ namespace Game_Xếp_Hình
         private void pn_Return_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
-            if (lb_level.Text == "3x3")
+            if (!TT_game)
             {
-                lb_level.Text = "5x5";
-                column = 5;
-                cell = 5;
-            }
-            else if (lb_level.Text == "4x4")
-            {
-                lb_level.Text = "3x3";
-                column = 3;
-                cell = 3;
-            }
-            else if (lb_level.Text == "5x5")
-            {
-                lb_level.Text = "4x4";
-                column = 4;
-                cell = 4;
+                if (lb_level.Text == "3x3")
+                {
+                    lb_level.Text = "5x5";
+                    column = 5;
+                    cell = 5;
+                }
+                else if (lb_level.Text == "4x4")
+                {
+                    lb_level.Text = "3x3";
+                    column = 3;
+                    cell = 3;
+                }
+                else if (lb_level.Text == "5x5")
+                {
+                    lb_level.Text = "4x4";
+                    column = 4;
+                    cell = 4;
+                }
             }
         }
 
@@ -304,6 +323,47 @@ namespace Game_Xếp_Hình
                         q.Owner = bg;
                         q.ShowDialog();
                         bg.Dispose();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    bg.Dispose();
+                }
+            }
+        }
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            playsoundclick();
+            if (!TT_game)
+            {
+                Form bg = new Form();
+                try
+                {
+                    using (Setting q = new Setting(flagmusic))
+                    {
+                        bg.StartPosition = FormStartPosition.Manual;
+                        bg.FormBorderStyle = FormBorderStyle.None;
+                        bg.Opacity = .50d;
+
+                        bg.BackColor = Color.Black;
+                        bg.WindowState = FormWindowState.Maximized;
+                        bg.TopMost = true;
+                        bg.Location = this.Location;
+                        bg.ShowInTaskbar = false;
+                        bg.Show();
+                        q.Owner = bg;
+                        //q.ShowDialog();
+                        if (q.ShowDialog() == DialogResult.OK)
+                        {
+                            flagmusic = q.flag;
+                        }
+                        bg.Dispose();
+
                     }
                 }
                 catch (Exception ex)

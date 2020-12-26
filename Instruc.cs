@@ -19,7 +19,8 @@ namespace Game_Xếp_Hình
             this.TransparencyKey = Color.DimGray;
         }
 
-        private void panel2_Click(object sender, EventArgs e)
+
+        private void label2_Click(object sender, EventArgs e)
         {
             this.Hide();
         }

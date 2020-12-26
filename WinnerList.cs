@@ -15,6 +15,9 @@ namespace Game_Xếp_Hình
         public WinnerList()
         {
             InitializeComponent();
+            this.BackColor = Color.DimGray;
+            panel1.BorderStyle = BorderStyle.None;
+            this.TransparencyKey = Color.DimGray;
             LoadListView();
         }
 
@@ -28,8 +31,7 @@ namespace Game_Xếp_Hình
                 lvWinnerList.Items.Add(lvItem);
             }
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
