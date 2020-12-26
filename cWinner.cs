@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Xếp_Hình
 {
-    class cWinner
+    public class cWinner
     {
         public string WinnerName { get; set; }
         public string WinnerTime { get; set; }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,17 +13,52 @@ namespace Game_Xếp_Hình
 {
     public partial class Win : Form
     {
-        public Win()
+        private string t, s;
+        public Win(string time, string step)
         {
+            t = time;
+            s = step;
             InitializeComponent();
             this.TransparencyKey = Color.Gray;
+            playsoundwin();
         }
-
+        private void playsoundwin()
+        {
+            SoundPlayer sp = new SoundPlayer("win.wav");
+            sp.Play();
+        }
         private void Win_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
-                this.Close(); 
+                this.Close();
+                Form bg = new Form();
+                try
+                {
+                    using (winner q = new winner(t, s))
+                    {
+                        bg.StartPosition = FormStartPosition.Manual;
+                        bg.FormBorderStyle = FormBorderStyle.None;
+                        bg.Opacity = .50d;
+                        bg.BackColor = Color.Black;
+                        bg.WindowState = FormWindowState.Maximized;
+                        bg.TopMost = true;
+                        bg.Location = this.Location;
+                        bg.ShowInTaskbar = false;
+                        bg.Show();
+                        q.Owner = bg;
+                        q.ShowDialog();
+                        bg.Dispose();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    bg.Dispose();
+                }
             }
         }
     }

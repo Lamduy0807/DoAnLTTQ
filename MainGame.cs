@@ -94,6 +94,10 @@ namespace Game_Xếp_Hình
                 CatAnh(anhNho);
 
             }
+            else
+            {
+                stringFileName = "";
+            }
 
         }
         public void ResetPoint()
@@ -222,8 +226,7 @@ namespace Game_Xếp_Hình
                 if (CheckWin())
                 {
                     isStart = false;
-                    Win s = new Win();
-                    s.Show();
+                    
                     int chieuRongAnh = pnGame.Width / iColumn;
                     int chieuCaoAnh = pnGame.Height / iCell;
                     PictureBox pb1 = new PictureBox();
@@ -287,8 +290,6 @@ namespace Game_Xếp_Hình
             if (CheckWin())
             {
                 isStart = false;
-                Win s = new Win();
-                s.Show();
                 int chieuRongAnh = pnGame.Width / iColumn;
                 int chieuCaoAnh = pnGame.Height / iCell;
                 PictureBox pb1 = new PictureBox();

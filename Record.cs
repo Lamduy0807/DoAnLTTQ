@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Game_Xếp_Hình
 {
-    class Record
+    public class Record
     {
 
         private const string FILE_NAME = "records.rw";
