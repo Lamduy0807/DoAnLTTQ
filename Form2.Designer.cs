@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbNew = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -50,23 +50,23 @@
             this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
             this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label2_MouseMove);
             // 
-            // label1
+            // lbNew
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Stencil", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(494, 372);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 95);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "NEW";
-            this.label1.Visible = false;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
-            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
+            this.lbNew.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNew.AutoSize = true;
+            this.lbNew.BackColor = System.Drawing.Color.Transparent;
+            this.lbNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbNew.Font = new System.Drawing.Font("Stencil", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNew.ForeColor = System.Drawing.Color.DimGray;
+            this.lbNew.Location = new System.Drawing.Point(494, 372);
+            this.lbNew.Name = "lbNew";
+            this.lbNew.Size = new System.Drawing.Size(207, 95);
+            this.lbNew.TabIndex = 12;
+            this.lbNew.Text = "NEW";
+            this.lbNew.Visible = false;
+            this.lbNew.Click += new System.EventHandler(this.lbNew_Click);
+            this.lbNew.MouseLeave += new System.EventHandler(this.lbNew_MouseLeave);
+            this.lbNew.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbNew_MouseMove);
             // 
             // Form2
             // 
@@ -76,7 +76,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 662);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbNew);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
@@ -92,6 +92,6 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbNew;
     }
 }
