@@ -24,7 +24,7 @@ namespace Game_Xếp_Hình
             sp.Play();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lbNew_Click(object sender, EventArgs e)
         {
             playsoundclick();
             Form3 f3 = new Form3();
@@ -37,17 +37,17 @@ namespace Game_Xếp_Hình
         private void Form2_Load(object sender, EventArgs e)
         {
             TransparetBackground(label2);
-            TransparetBackground(label1);
+            TransparetBackground(lbNew);
         }
 
-        private void label1_MouseMove(object sender, MouseEventArgs e)
+        private void lbNew_MouseMove(object sender, MouseEventArgs e)
         {
-            label1.ForeColor = Color.Red;
+            lbNew.ForeColor = Color.Red;
         }
 
-        private void label1_MouseLeave(object sender, EventArgs e)
+        private void lbNew_MouseLeave(object sender, EventArgs e)
         {
-            label1.ForeColor = Color.DimGray;
+            lbNew.ForeColor = Color.DimGray;
         }
         void TransparetBackground(Control C)
         {
@@ -71,8 +71,7 @@ namespace Game_Xếp_Hình
         private void label2_Click(object sender, EventArgs e)
         {
             playsoundclick();
-            //Quit q = new Quit();
-            //q.Show();
+            
             Form bg = new Form();
             try
             {
@@ -112,5 +111,7 @@ namespace Game_Xếp_Hình
         {
             label2.ForeColor = Color.DimGray;
         }
+
+        
     }
 }

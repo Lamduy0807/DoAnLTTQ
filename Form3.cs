@@ -93,13 +93,13 @@ namespace Game_Xếp_Hình
                 G.SetStart(false);
                 Ispause = false;
                 IsXT = false;
-                panel3.BackgroundImage = Properties.Resources._continue;
+                pnConPau.BackgroundImage = Properties.Resources._continue;
                 Win s = new Win(cTime,cStep);
                 s.Show();
             }
         }
 
-        private void panel2_MouseClick(object sender, MouseEventArgs e)
+        private void pnRestart_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
             if (TT_game)
@@ -109,70 +109,15 @@ namespace Game_Xếp_Hình
                 lbtime.Text = "0 s";
                 time = 0;
                 lbdiem.Text = diem.ToString();
-                panel3.BackgroundImage = Properties.Resources.pau;
+                pnConPau.BackgroundImage = Properties.Resources.pau;
                 G.XaoTron();
             }
         }
 
-        private void panel3_MouseClick(object sender, MouseEventArgs e)
-        {
-            playsoundclick();
-            if (TT_game == true)
-            {
-                Ispause = true;
-                TT_game = false;
-                G.SetStart(TT_game);
-                panel3.BackgroundImage = Properties.Resources._continue;
-                timer1.Stop();
-            }
-            else if (TT_game == false && CheckHaveImage == true && IsXT)
-            {
-                Ispause = false;
-                TT_game = true;
-                G.SetStart(TT_game);
-                panel3.BackgroundImage = Properties.Resources.pau;
-                timer1.Start();
-            }
-            else
-                return;
-        }
-
-        private void panel4_MouseClick(object sender, MouseEventArgs e)
-        {
-            playsoundclick();
-            Form2 f = new Form2();
-            f.Show();
-            this.Hide();
-        }
-
-       
-
-        private void panel9_MouseMove(object sender, MouseEventArgs e)
-        {
-            lbExit.Visible = true;
-            panel9.MouseLeave += Panel9_MouseLeave;
-        }
-
-        private void Panel9_MouseLeave(object sender, EventArgs e)
-        {
-            lbExit.Visible = false;
-        }
-
-        private void panel5_MouseMove(object sender, MouseEventArgs e)
-        {
-            lbSet.Visible = true;
-            panel5.MouseLeave += Panel5_MouseLeave;
-        }
-
-        private void Panel5_MouseLeave(object sender, EventArgs e)
-        {
-            lbSet.Visible = false;
-        }
-
-        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        private void pnRestart_MouseMove(object sender, MouseEventArgs e)
         {
             lbRe.Visible = true;
-            panel2.MouseLeave += Panel2_MouseLeave;
+            pnRestart.MouseLeave += Panel2_MouseLeave;
         }
 
         private void Panel2_MouseLeave(object sender, EventArgs e)
@@ -180,161 +125,71 @@ namespace Game_Xếp_Hình
             lbRe.Visible = false;
         }
 
-        private void panel3_MouseMove(object sender, MouseEventArgs e)
+        //private void panel2_MouseClick(object sender, MouseEventArgs e)
+        //{
+
+        //}
+
+        //private void panel3_MouseClick(object sender, MouseEventArgs e)
+        //{
+
+        //}
+
+        private void pnConPau_MouseClick(object sender, MouseEventArgs e)
+        {
+            playsoundclick();
+            if (TT_game == true)
+            {
+                Ispause = true;
+                TT_game = false;
+                G.SetStart(TT_game);
+                pnConPau.BackgroundImage = Properties.Resources._continue;
+                timer1.Stop();
+            }
+            else if (TT_game == false && CheckHaveImage == true && IsXT)
+            {
+                Ispause = false;
+                TT_game = true;
+                G.SetStart(TT_game);
+                pnConPau.BackgroundImage = Properties.Resources.pau;
+                timer1.Start();
+            }
+            else
+                return;
+        }
+
+        private void pnConPau_MouseMove(object sender, MouseEventArgs e)
         {
             lbConPau.Visible = true;
 
-            panel3.MouseLeave += Panel3_MouseLeave;
+            pnConPau.MouseLeave += Panel3_MouseLeave;
         }
 
         private void Panel3_MouseLeave(object sender, EventArgs e)
         {
             lbConPau.Visible = false;
         }
-
-        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        private void pnHome_MouseClick(object sender, MouseEventArgs e)
         {
-            lbIn.Visible = true;
-            panel7.MouseLeave += Panel7_MouseLeave;
+            playsoundclick();
+            Form2 f = new Form2();
+            f.Show();
+            this.Hide();
         }
 
-        private void Panel7_MouseLeave(object sender, EventArgs e)
-        {
-            lbIn.Visible = false;
-        }
-
-        private void panel4_MouseMove(object sender, MouseEventArgs e)
+        private void pnHome_MouseMove(object sender, MouseEventArgs e)
         {
             lbHome.Visible = true;
-            panel4.MouseLeave += Panel4_MouseLeave;
+            pnHome.MouseLeave += Panel4_MouseLeave;
         }
-
         private void Panel4_MouseLeave(object sender, EventArgs e)
         {
             lbHome.Visible = false;
         }
 
-        private void pn_Next_MouseClick(object sender, MouseEventArgs e)
-        {
-            playsoundclick();
-            if (!TT_game)
-            {
-                if (lb_level.Text == "3x3")
-                {
-                    lb_level.Text = "4x4";
-                    column = 4;
-                    cell = 4;
-                }
-                else if (lb_level.Text == "4x4")
-                {
-                    lb_level.Text = "5x5";
-                    column = 5;
-                    cell = 5;
-                }
-                else if (lb_level.Text == "5x5")
-                {
-                    lb_level.Text = "3x3";
-                    column = 3;
-                    cell = 3;
-                }
-            }
-        }
+        
 
-        private void LbChooseImage_Click(object sender, EventArgs e)
-        {
-            playsoundclick();
 
-            if (!TT_game )
-            {
-                Ispause = false;
-                IsXT = false;
-                panel3.BackgroundImage = Properties.Resources.pau;
-                time = 0;
-                lbtime.Text = "0 s";
-                diem = 0;
-                G.ResetPoint();
-                lbdiem.Text = diem.ToString();
-                G.open(column, cell);
-                if (!string.IsNullOrEmpty(G.GetImage()))
-                {
-                    FileName = G.GetImage();
-                    pbmain.Image = Image.FromFile(FileName);
-                    CheckHaveImage = true;
-                    lbStart.Click += LbStart_Click;
-                    panel1.Visible = true;
-                }
-            }
-        }
-
-        private void Form3_KeyUp_1(object sender, KeyEventArgs e)
-        {
-            G.Pause_KeyDown(sender, e);
-        }
-
-        private void pn_Return_MouseClick(object sender, MouseEventArgs e)
-        {
-            playsoundclick();
-            if (!TT_game)
-            {
-                if (lb_level.Text == "3x3")
-                {
-                    lb_level.Text = "5x5";
-                    column = 5;
-                    cell = 5;
-                }
-                else if (lb_level.Text == "4x4")
-                {
-                    lb_level.Text = "3x3";
-                    column = 3;
-                    cell = 3;
-                }
-                else if (lb_level.Text == "5x5")
-                {
-                    lb_level.Text = "4x4";
-                    column = 4;
-                    cell = 4;
-                }
-            }
-        }
-
-        private void panel7_Click(object sender, EventArgs e)
-        {
-            playsoundclick();
-            if (!TT_game)
-            { 
-                TT_game = false;
-                if (CheckHaveImage)
-                    panel3.BackgroundImage = Properties.Resources._continue;
-                timer1.Stop();
-                Form bg = new Form();
-                try
-                {
-                    using (Instruc q = new Instruc())
-                    {
-                        bg.StartPosition = FormStartPosition.Manual;
-                        bg.FormBorderStyle = FormBorderStyle.None;
-                        bg.Opacity = .50d;
-                        bg.BackColor = Color.Black;
-                        bg.WindowState = FormWindowState.Maximized;
-                        bg.TopMost = true;
-                        bg.Location = this.Location;
-                        bg.ShowInTaskbar = false;
-                        bg.Show();
-                        q.Owner = bg;
-                        q.ShowDialog();
-                        bg.Dispose();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    bg.Dispose();
-                }
-            }
-        }
 
         private void panel5_Click(object sender, EventArgs e)
         {
@@ -377,11 +232,79 @@ namespace Game_Xếp_Hình
             }
         }
 
-        private void panel9_MouseClick(object sender, MouseEventArgs e)
+        private void pnOpt_MouseMove(object sender, MouseEventArgs e)
+        {
+            lbSet.Visible = true;
+            pnOpt.MouseLeave += Panel5_MouseLeave;
+        }
+
+        private void Panel5_MouseLeave(object sender, EventArgs e)
+        {
+            lbSet.Visible = false;
+        }
+
+
+        private void pnIns_MouseMove(object sender, MouseEventArgs e)
+        {
+            lbIn.Visible = true;
+            pnIns.MouseLeave += Panel7_MouseLeave;
+        }
+
+        private void Panel7_MouseLeave(object sender, EventArgs e)
+        {
+            lbIn.Visible = false;
+        }
+
+        private void panel7_Click(object sender, EventArgs e)
+        {
+            playsoundclick();
+            if (!TT_game)
+            {
+                TT_game = false;
+                if (CheckHaveImage && Ispause)
+                    pnConPau.BackgroundImage = Properties.Resources._continue;
+                timer1.Stop();
+                Form bg = new Form();
+                try
+                {
+                    using (Instruc q = new Instruc())
+                    {
+                        bg.StartPosition = FormStartPosition.Manual;
+                        bg.FormBorderStyle = FormBorderStyle.None;
+                        bg.Opacity = .50d;
+                        bg.BackColor = Color.Black;
+                        bg.WindowState = FormWindowState.Maximized;
+                        bg.TopMost = true;
+                        bg.Location = this.Location;
+                        bg.ShowInTaskbar = false;
+                        bg.Show();
+                        q.Owner = bg;
+                        q.ShowDialog();
+                        bg.Dispose();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    bg.Dispose();
+                }
+            }
+        }
+
+        private void pnExit_MouseMove(object sender, MouseEventArgs e)
+        {
+            lbExit.Visible = true;
+            pnExit.MouseLeave += Panel9_MouseLeave;
+        }
+
+        private void pnExit_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
             TT_game = false;
-            panel3.BackgroundImage = Properties.Resources._continue;
+            pnConPau.BackgroundImage = Properties.Resources._continue;
             timer1.Stop();
             Form bg = new Form();
             try
@@ -409,6 +332,97 @@ namespace Game_Xếp_Hình
             finally
             {
                 bg.Dispose();
+            }
+        }
+
+        
+        private void Panel9_MouseLeave(object sender, EventArgs e)
+        {
+            lbExit.Visible = false;
+        }        
+       
+
+        private void pn_Next_MouseClick(object sender, MouseEventArgs e)
+        {
+            playsoundclick();
+            if (!TT_game)
+            {
+                if (lb_level.Text == "3x3")
+                {
+                    lb_level.Text = "4x4";
+                    column = 4;
+                    cell = 4;
+                }
+                else if (lb_level.Text == "4x4")
+                {
+                    lb_level.Text = "5x5";
+                    column = 5;
+                    cell = 5;
+                }
+                else if (lb_level.Text == "5x5")
+                {
+                    lb_level.Text = "3x3";
+                    column = 3;
+                    cell = 3;
+                }
+            }
+        }
+
+        private void LbChooseImage_Click(object sender, EventArgs e)
+        {
+            playsoundclick();
+
+            if (!TT_game )
+            {
+                Ispause = false;
+                IsXT = false;
+                pnConPau.BackgroundImage = Properties.Resources.pau;
+                time = 0;
+                lbtime.Text = "0 s";
+                diem = 0;
+                G.ResetPoint();
+                lbdiem.Text = diem.ToString();
+                G.open(column, cell);
+                if (!string.IsNullOrEmpty(G.GetImage()))
+                {
+                    FileName = G.GetImage();
+                    pbmain.Image = Image.FromFile(FileName);
+                    CheckHaveImage = true;
+                    lbStart.Click += LbStart_Click;
+                    panel1.Visible = true;
+                }
+            }
+        }
+
+        private void Form3_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            G.Pause_KeyDown(sender, e);
+        }
+        
+
+        private void pn_Return_MouseClick(object sender, MouseEventArgs e)
+        {
+            playsoundclick();
+            if (!TT_game)
+            {
+                if (lb_level.Text == "3x3")
+                {
+                    lb_level.Text = "5x5";
+                    column = 5;
+                    cell = 5;
+                }
+                else if (lb_level.Text == "4x4")
+                {
+                    lb_level.Text = "3x3";
+                    column = 3;
+                    cell = 3;
+                }
+                else if (lb_level.Text == "5x5")
+                {
+                    lb_level.Text = "4x4";
+                    column = 4;
+                    cell = 4;
+                }
             }
         }
 

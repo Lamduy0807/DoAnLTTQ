@@ -38,13 +38,13 @@
             this.lbStart = new System.Windows.Forms.Label();
             this.lbcapdo = new System.Windows.Forms.Label();
             this.lbLevel = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnHome = new System.Windows.Forms.Panel();
+            this.pnConPau = new System.Windows.Forms.Panel();
+            this.pnRestart = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnExit = new System.Windows.Forms.Panel();
+            this.pnIns = new System.Windows.Forms.Panel();
+            this.pnOpt = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbtime = new System.Windows.Forms.Label();
@@ -152,92 +152,92 @@
             this.lbLevel.Text = "Level";
             this.lbLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel4
+            // pnHome
             // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(3, 464);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(95, 92);
-            this.panel4.TabIndex = 29;
-            this.panel4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseClick);
-            this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseMove);
+            this.pnHome.BackColor = System.Drawing.Color.Transparent;
+            this.pnHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnHome.BackgroundImage")));
+            this.pnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnHome.Location = new System.Drawing.Point(3, 464);
+            this.pnHome.Name = "pnHome";
+            this.pnHome.Size = new System.Drawing.Size(95, 92);
+            this.pnHome.TabIndex = 29;
+            this.pnHome.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnHome_MouseClick);
+            this.pnHome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnHome_MouseMove);
             // 
-            // panel3
+            // pnConPau
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(3, 278);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(89, 87);
-            this.panel3.TabIndex = 28;
-            this.panel3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseClick);
-            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.pnConPau.BackColor = System.Drawing.Color.Transparent;
+            this.pnConPau.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnConPau.BackgroundImage")));
+            this.pnConPau.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnConPau.Location = new System.Drawing.Point(3, 278);
+            this.pnConPau.Name = "pnConPau";
+            this.pnConPau.Size = new System.Drawing.Size(89, 87);
+            this.pnConPau.TabIndex = 28;
+            this.pnConPau.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnConPau_MouseClick);
+            this.pnConPau.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnConPau_MouseMove);
             // 
-            // panel2
+            // pnRestart
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(5, 180);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(90, 92);
-            this.panel2.TabIndex = 27;
-            this.panel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseClick);
-            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.pnRestart.BackColor = System.Drawing.Color.Transparent;
+            this.pnRestart.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnRestart.BackgroundImage")));
+            this.pnRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnRestart.Location = new System.Drawing.Point(5, 180);
+            this.pnRestart.Name = "pnRestart";
+            this.pnRestart.Size = new System.Drawing.Size(90, 92);
+            this.pnRestart.TabIndex = 27;
+            this.pnRestart.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnRestart_MouseClick);
+            this.pnRestart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnRestart_MouseMove);
             // 
             // panel8
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Controls.Add(this.panel7);
-            this.panel8.Controls.Add(this.panel4);
-            this.panel8.Controls.Add(this.panel5);
-            this.panel8.Controls.Add(this.panel2);
-            this.panel8.Controls.Add(this.panel3);
+            this.panel8.Controls.Add(this.pnExit);
+            this.panel8.Controls.Add(this.pnIns);
+            this.panel8.Controls.Add(this.pnHome);
+            this.panel8.Controls.Add(this.pnOpt);
+            this.panel8.Controls.Add(this.pnRestart);
+            this.panel8.Controls.Add(this.pnConPau);
             this.panel8.Location = new System.Drawing.Point(1827, -2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(93, 651);
             this.panel8.TabIndex = 34;
             // 
-            // panel9
+            // pnExit
             // 
-            this.panel9.BackColor = System.Drawing.Color.Transparent;
-            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel9.Location = new System.Drawing.Point(1, 4);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(92, 83);
-            this.panel9.TabIndex = 31;
-            this.panel9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel9_MouseClick);
-            this.panel9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel9_MouseMove);
+            this.pnExit.BackColor = System.Drawing.Color.Transparent;
+            this.pnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnExit.BackgroundImage")));
+            this.pnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnExit.Location = new System.Drawing.Point(1, 4);
+            this.pnExit.Name = "pnExit";
+            this.pnExit.Size = new System.Drawing.Size(92, 83);
+            this.pnExit.TabIndex = 31;
+            this.pnExit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnExit_MouseClick);
+            this.pnExit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnExit_MouseMove);
             // 
-            // panel7
+            // pnIns
             // 
-            this.panel7.BackColor = System.Drawing.Color.Transparent;
-            this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel7.Location = new System.Drawing.Point(3, 371);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(90, 89);
-            this.panel7.TabIndex = 32;
-            this.panel7.Click += new System.EventHandler(this.panel7_Click);
-            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
+            this.pnIns.BackColor = System.Drawing.Color.Transparent;
+            this.pnIns.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnIns.BackgroundImage")));
+            this.pnIns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnIns.Location = new System.Drawing.Point(3, 371);
+            this.pnIns.Name = "pnIns";
+            this.pnIns.Size = new System.Drawing.Size(90, 89);
+            this.pnIns.TabIndex = 32;
+            this.pnIns.Click += new System.EventHandler(this.panel7_Click);
+            this.pnIns.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnIns_MouseMove);
             // 
-            // panel5
+            // pnOpt
             // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Location = new System.Drawing.Point(3, 93);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(92, 83);
-            this.panel5.TabIndex = 30;
-            this.panel5.Click += new System.EventHandler(this.panel5_Click);
-            this.panel5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
+            this.pnOpt.BackColor = System.Drawing.Color.Transparent;
+            this.pnOpt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnOpt.BackgroundImage")));
+            this.pnOpt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnOpt.Location = new System.Drawing.Point(3, 93);
+            this.pnOpt.Name = "pnOpt";
+            this.pnOpt.Size = new System.Drawing.Size(92, 83);
+            this.pnOpt.TabIndex = 30;
+            this.pnOpt.Click += new System.EventHandler(this.panel5_Click);
+            this.pnOpt.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnOpt_MouseMove);
             // 
             // label4
             // 
@@ -468,19 +468,19 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnHome;
+        private System.Windows.Forms.Panel pnConPau;
+        private System.Windows.Forms.Panel pnRestart;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnIns;
+        private System.Windows.Forms.Panel pnOpt;
         private System.Windows.Forms.Label lbcapdo;
         private System.Windows.Forms.Label lbLevel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbtime;
         private System.Windows.Forms.Label lbdiem;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel pnExit;
         private System.Windows.Forms.Label LbChooseImage;
         private System.Windows.Forms.Label lbStart;
         private System.Windows.Forms.Panel lbPau;
