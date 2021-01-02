@@ -95,18 +95,20 @@
             // 
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.Transparent;
+            this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
+            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel10.Controls.Add(this.LbChooseImage);
             this.panel10.Controls.Add(this.lbStart);
             this.panel10.Location = new System.Drawing.Point(1210, 674);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(712, 382);
+            this.panel10.Size = new System.Drawing.Size(625, 419);
             this.panel10.TabIndex = 36;
             // 
             // LbChooseImage
             // 
             this.LbChooseImage.Font = new System.Drawing.Font("Stencil", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbChooseImage.ForeColor = System.Drawing.Color.Red;
-            this.LbChooseImage.Location = new System.Drawing.Point(153, 45);
+            this.LbChooseImage.Location = new System.Drawing.Point(142, 36);
             this.LbChooseImage.Name = "LbChooseImage";
             this.LbChooseImage.Size = new System.Drawing.Size(370, 53);
             this.LbChooseImage.TabIndex = 41;
@@ -118,7 +120,7 @@
             // 
             this.lbStart.Font = new System.Drawing.Font("Stencil", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStart.ForeColor = System.Drawing.Color.Red;
-            this.lbStart.Location = new System.Drawing.Point(193, 184);
+            this.lbStart.Location = new System.Drawing.Point(208, 153);
             this.lbStart.Name = "lbStart";
             this.lbStart.Size = new System.Drawing.Size(235, 53);
             this.lbStart.TabIndex = 40;
@@ -200,7 +202,7 @@
             this.panel8.Controls.Add(this.pnConPau);
             this.panel8.Location = new System.Drawing.Point(1827, -2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(93, 651);
+            this.panel8.Size = new System.Drawing.Size(93, 1057);
             this.panel8.TabIndex = 34;
             // 
             // pnExit
