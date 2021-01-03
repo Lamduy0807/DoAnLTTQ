@@ -80,7 +80,7 @@ namespace Game_Xếp_Hình
                 Ispause = false;
                 IsXT = false;
                 pnConPau.BackgroundImage = Properties.Resources._continue;
-                Win s = new Win(cTime,cStep);
+                Win s = new Win(cTime,cStep, flagmusic);
                 s.Show();
             }
         }
