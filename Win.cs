@@ -14,18 +14,23 @@ namespace Game_Xếp_Hình
     public partial class Win : Form
     {
         private string t, s;
-        public Win(string time, string step)
+        private bool flagsound= true;
+        public Win(string time, string step, bool flag)
         {
             t = time;
             s = step;
+            flagsound = flag;
             InitializeComponent();
             this.TransparencyKey = Color.Gray;
             playsoundwin();
         }
         private void playsoundwin()
         {
-            SoundPlayer sp = new SoundPlayer("win.wav");
-            sp.Play();
+            if (flagsound)
+            {
+                SoundPlayer sp = new SoundPlayer("win.wav");
+                sp.Play();
+            }
         }
         private void Win_KeyPress(object sender, KeyPressEventArgs e)
         {

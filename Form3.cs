@@ -14,6 +14,7 @@ namespace Game_Xếp_Hình
 {
     public partial class Form3 : Form
     {
+        #region properties
         private bool flagmusic = true;
         private bool IsXT = false;
         private int column = 3, cell = 3;
@@ -25,13 +26,15 @@ namespace Game_Xếp_Hình
         private string FileName;
         public MainGame G;
         private string cTime, cStep;
+        #endregion
         public Form3()
         {
             InitializeComponent();
             G = new MainGame(panel1, lbdiem, column, cell, Game_Xếp_Hình.Properties.Resources.main, TT_game);
             G.SetPanel(panel1.Width, panel1.Height);
         }
-
+        #region Event
+        //Event label Start 
         private void LbStart_Click(object sender, EventArgs e)
         {
             if (!Ispause)
@@ -44,26 +47,7 @@ namespace Game_Xếp_Hình
             }
         }
 
-        void TransparetBackground(Control C)
-        {
-            C.Visible = false;
-
-            C.Refresh();
-            Application.DoEvents();
-
-            Rectangle screenRectangle = RectangleToScreen(this.ClientRectangle);
-            int titleHeight = screenRectangle.Top - this.Top;
-            int Right = screenRectangle.Left - this.Left;
-
-            Bitmap bmp = new Bitmap(this.Width, this.Height);
-            this.DrawToBitmap(bmp, new Rectangle(0, 0, this.Width, this.Height));
-            Bitmap bmpImage = new Bitmap(bmp);
-            bmp = bmpImage.Clone(new Rectangle(C.Location.X + Right, C.Location.Y + titleHeight, C.Width, C.Height), bmpImage.PixelFormat);
-            C.BackgroundImage = bmp;
-
-            C.Visible = true;
-        }
-
+        //Sound
         public void playsoundclick()
         {
             if (flagmusic == true)
@@ -80,6 +64,8 @@ namespace Game_Xếp_Hình
                 sp.Play();
             }
         }
+
+        //event Time tick
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             lbtime.Text = (time / 60).ToString() + ":" + (time % 60).ToString() + "s";
@@ -94,11 +80,12 @@ namespace Game_Xếp_Hình
                 Ispause = false;
                 IsXT = false;
                 pnConPau.BackgroundImage = Properties.Resources._continue;
-                Win s = new Win(cTime,cStep);
+                Win s = new Win(cTime,cStep, flagmusic);
                 s.Show();
             }
         }
 
+        //Event nút Restart
         private void pnRestart_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
@@ -113,28 +100,17 @@ namespace Game_Xếp_Hình
                 G.XaoTron();
             }
         }
-
         private void pnRestart_MouseMove(object sender, MouseEventArgs e)
         {
             lbRe.Visible = true;
             pnRestart.MouseLeave += Panel2_MouseLeave;
         }
-
         private void Panel2_MouseLeave(object sender, EventArgs e)
         {
             lbRe.Visible = false;
         }
 
-        //private void panel2_MouseClick(object sender, MouseEventArgs e)
-        //{
-
-        //}
-
-        //private void panel3_MouseClick(object sender, MouseEventArgs e)
-        //{
-
-        //}
-
+        //Event nút ConPau
         private void pnConPau_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
@@ -157,18 +133,18 @@ namespace Game_Xếp_Hình
             else
                 return;
         }
-
         private void pnConPau_MouseMove(object sender, MouseEventArgs e)
         {
             lbConPau.Visible = true;
 
             pnConPau.MouseLeave += Panel3_MouseLeave;
         }
-
         private void Panel3_MouseLeave(object sender, EventArgs e)
         {
             lbConPau.Visible = false;
         }
+
+        //Event nút Home
         private void pnHome_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
@@ -176,7 +152,6 @@ namespace Game_Xếp_Hình
             f.Show();
             this.Hide();
         }
-
         private void pnHome_MouseMove(object sender, MouseEventArgs e)
         {
             lbHome.Visible = true;
@@ -187,10 +162,7 @@ namespace Game_Xếp_Hình
             lbHome.Visible = false;
         }
 
-        
-
-
-
+        //Event nút options
         private void panel5_Click(object sender, EventArgs e)
         {
             playsoundclick();
@@ -212,7 +184,6 @@ namespace Game_Xếp_Hình
                         bg.ShowInTaskbar = false;
                         bg.Show();
                         q.Owner = bg;
-                        //q.ShowDialog();
                         if (q.ShowDialog() == DialogResult.OK)
                         {
                             flagmusic = q.flag;
@@ -231,30 +202,26 @@ namespace Game_Xếp_Hình
                 }
             }
         }
-
         private void pnOpt_MouseMove(object sender, MouseEventArgs e)
         {
             lbSet.Visible = true;
             pnOpt.MouseLeave += Panel5_MouseLeave;
         }
-
         private void Panel5_MouseLeave(object sender, EventArgs e)
         {
             lbSet.Visible = false;
         }
 
-
+        //Event  nút instruction
         private void pnIns_MouseMove(object sender, MouseEventArgs e)
         {
             lbIn.Visible = true;
             pnIns.MouseLeave += Panel7_MouseLeave;
         }
-
         private void Panel7_MouseLeave(object sender, EventArgs e)
         {
             lbIn.Visible = false;
         }
-
         private void panel7_Click(object sender, EventArgs e)
         {
             playsoundclick();
@@ -293,13 +260,13 @@ namespace Game_Xếp_Hình
                 }
             }
         }
-
+        
+        //Event nút Exit 
         private void pnExit_MouseMove(object sender, MouseEventArgs e)
         {
             lbExit.Visible = true;
             pnExit.MouseLeave += Panel9_MouseLeave;
         }
-
         private void pnExit_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
@@ -334,14 +301,12 @@ namespace Game_Xếp_Hình
                 bg.Dispose();
             }
         }
-
-        
         private void Panel9_MouseLeave(object sender, EventArgs e)
         {
             lbExit.Visible = false;
         }        
        
-
+        //Event nút next level
         private void pn_Next_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
@@ -368,6 +333,7 @@ namespace Game_Xếp_Hình
             }
         }
 
+        //event nút Choose Image
         private void LbChooseImage_Click(object sender, EventArgs e)
         {
             playsoundclick();
@@ -394,12 +360,7 @@ namespace Game_Xếp_Hình
             }
         }
 
-        private void Form3_KeyUp_1(object sender, KeyEventArgs e)
-        {
-            G.Pause_KeyDown(sender, e);
-        }
-        
-
+        //Event nút Return level
         private void pn_Return_MouseClick(object sender, MouseEventArgs e)
         {
             playsoundclick();
@@ -426,6 +387,11 @@ namespace Game_Xếp_Hình
             }
         }
 
+        private void Form3_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            G.Pause_KeyDown(sender, e);
+        }
 
+        #endregion 
     }
 }
